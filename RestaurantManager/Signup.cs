@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RestaurantManager
 {
-    public partial class Signup_Form1 : Form
+    public partial class Signup : Form
     {
-        public Signup_Form1()
+        public Signup()
         {
             InitializeComponent();
         }
@@ -36,9 +36,29 @@ namespace RestaurantManager
         {
             if (radioButton1.Checked)
             {
-                var nextForm = new Signup_Form2();
+                var nextForm = new Signin();
                 nextForm.Show();
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

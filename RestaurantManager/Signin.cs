@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RestaurantManager
 {
-    public partial class Signup_Form2 : Form
+    public partial class Signin : Form
     {
-        public Signup_Form2()
+        public Signin()
         {
             InitializeComponent();
         }
@@ -28,6 +28,21 @@ namespace RestaurantManager
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

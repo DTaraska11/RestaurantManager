@@ -10,27 +10,35 @@ using System.Windows.Forms;
 
 namespace RestaurantManager
 {
-    public partial class Form1 : Form
+    public partial class Welcome : Form
     {
-        public Form1()
+        public Welcome()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        
+        private void button1_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            var nextForm = new Signup_Form1();
+            var nextForm = new Signin();
             nextForm.Show();
         }
+
+
+        private void button2_Click(object sender, EventArgs e)
+                {
+                    var nextForm = new Signup();
+                    nextForm.Show();
+                }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+     
+
     }
 }
