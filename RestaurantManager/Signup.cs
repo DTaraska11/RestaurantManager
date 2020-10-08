@@ -34,11 +34,11 @@ namespace RestaurantManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (radioButton1.Checked)
-            {
-                var nextForm = new Signin();
-                nextForm.Show();
-            }
+            //if (radioButton1.Checked)
+           // {
+              //  var nextForm = new Signin();
+               // nextForm.Show();
+            //}
         }
 
         private void label1_Click(object sender, EventArgs e)
