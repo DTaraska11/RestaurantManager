@@ -17,20 +17,28 @@ namespace RestaurantManager
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            var form = new Form2();
+            form.ShowDialog(this); // if you need non-modal window
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
+            
+            button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var form = new Form3();
+            form.ShowDialog(this); // if you need non-modal window
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var nextForm = new Signup_Form1();
-            nextForm.Show();
+            var form = new Form4();
+            form.ShowDialog(this); // if you need non-modal window
         }
     }
 }
