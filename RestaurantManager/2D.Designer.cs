@@ -41,6 +41,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,12 +110,10 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(-59, 57);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(-59, 117);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(673, 669);
+            this.panel1.Size = new System.Drawing.Size(673, 609);
             this.panel1.TabIndex = 2;
             // 
             // flowLayoutPanel2
@@ -135,11 +134,11 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Ink Free", 7.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Orchid;
-            this.textBox1.Location = new System.Drawing.Point(168, 83);
+            this.textBox1.Location = new System.Drawing.Point(64, 551);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(640, 33);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "~~ANNOUNCEMENTS! ~~ANNOUNCEMENTS!";
+            this.textBox1.Text = "~~ANNOUNCEMENTS! ~~ ANNOUNCEMENTS! ~~ ANNOUCEMENTS~~~";
             // 
             // _2D
             // 
@@ -147,7 +146,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(612, 728);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -156,9 +154,10 @@
             this.Text = "_2D";
             this.Load += new System.EventHandler(this._2D_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
