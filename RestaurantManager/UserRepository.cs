@@ -16,7 +16,7 @@ namespace RestaurantManager
         {
             using (IDbConnection db = new SqlConnection(AppHelper.ConnectionString))
             {
-                var result = await db.ExecuteAsync(RestaurantManager.Properties.Resources.InsertUser, new { FullName = user.FullName, Password = user.Password, Email = user.Email, UserType = user.UserType });
+                var result = await db.ExecuteAsync(RestaurantManager.Properties.Resources.InsertUser, new {FullName = user.FullName, Password = user.Password, Email = user.Email, UserType = user.UserType });
                 return result > 0; 
             }
 

@@ -61,7 +61,7 @@ namespace RestaurantManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to if not exists(select fullname from users where fullname= @FullName)                      begin                                                          insert into users(fullname, password, email, usertype)                                           values( @FullName, @Password, @Address, @UserType)                                end.
+        ///   Looks up a localized string similar to if not exists(select fullname from users where fullname= @FullName)                      begin                                                          insert into users(fullname, password, email, usertype)                                           values( @FullName, @Password, @Email, @UserType)                                end.
         /// </summary>
         internal static string InsertUser {
             get {
