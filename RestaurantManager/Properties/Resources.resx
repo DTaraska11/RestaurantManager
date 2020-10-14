@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="InsertUser" xml:space="preserve">
-    <value>if not exists(select fullname from users where fullname= @FullName)                      begin                                                          insert into users(fullname, password, email, usertype)                                           values( @FullName, @Password, @Email, @UserType)                                end</value>
+    <value>if not exists(select fullname from users where fullname= @FullName)                      begin                                                          insert into users(fullname, password, email, usertype)                                           values( @FullName, @Password, @email, @UserType)                                end</value>
   </data>
 </root>

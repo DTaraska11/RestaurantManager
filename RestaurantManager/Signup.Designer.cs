@@ -89,7 +89,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(94, 278);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(464, 291);
+            this.panel1.Size = new System.Drawing.Size(486, 291);
             this.panel1.TabIndex = 12;
             // 
             // UserType
@@ -102,9 +102,9 @@
             "Employee",
             "Manager",
             "Owner"});
-            this.UserType.Location = new System.Drawing.Point(238, 219);
+            this.UserType.Location = new System.Drawing.Point(256, 219);
             this.UserType.Name = "UserType";
-            this.UserType.Size = new System.Drawing.Size(196, 33);
+            this.UserType.Size = new System.Drawing.Size(198, 33);
             this.UserType.TabIndex = 13;
             this.UserType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -147,18 +147,18 @@
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(238, 171);
+            this.txtConfirmPass.Location = new System.Drawing.Point(256, 171);
             this.txtConfirmPass.Margin = new System.Windows.Forms.Padding(6);
             this.txtConfirmPass.Name = "txtConfirmPass";
-            this.txtConfirmPass.Size = new System.Drawing.Size(196, 31);
+            this.txtConfirmPass.Size = new System.Drawing.Size(198, 31);
             this.txtConfirmPass.TabIndex = 8;
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(238, 128);
+            this.txtPass.Location = new System.Drawing.Point(256, 128);
             this.txtPass.Margin = new System.Windows.Forms.Padding(6);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(196, 31);
+            this.txtPass.Size = new System.Drawing.Size(198, 31);
             this.txtPass.TabIndex = 7;
             // 
             // label3
@@ -175,18 +175,18 @@
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(238, 42);
+            this.txtFullName.Location = new System.Drawing.Point(256, 42);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(6);
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(196, 31);
+            this.txtFullName.Size = new System.Drawing.Size(198, 31);
             this.txtFullName.TabIndex = 3;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(238, 85);
+            this.txtEmail.Location = new System.Drawing.Point(256, 85);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(196, 31);
+            this.txtEmail.Size = new System.Drawing.Size(198, 31);
             this.txtEmail.TabIndex = 6;
             // 
             // label4
