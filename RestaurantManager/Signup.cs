@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace RestaurantManager
 {
@@ -38,13 +39,14 @@ namespace RestaurantManager
 
         }
 
-        private async void butSignUp_Click(object sender, EventArgs e)
+        private void butSignUp_Click(object sender, EventArgs e)
         {
             //empty name field
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
                 MessageBox.Show("Please enter your name.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtFullName.Focus();
+                String name = txtFullName.Text;
                 return;
             }
 
@@ -53,6 +55,7 @@ namespace RestaurantManager
             {
                 MessageBox.Show("Please enter your email.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtEmail.Focus();
+                String email = txtEmail.Text;
                 return;
             }
 
@@ -61,6 +64,7 @@ namespace RestaurantManager
             {
                 MessageBox.Show("Please enter your password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtPass.Focus();
+                String pass = txtPass.Text;
                 return;
             }
 
@@ -69,6 +73,7 @@ namespace RestaurantManager
             {
                 MessageBox.Show("Please confirm your password.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtConfirmPass.Focus();
+                String conPass = txtConfirmPass.Text;
                 return;
             }
 
@@ -77,6 +82,7 @@ namespace RestaurantManager
             {
                 MessageBox.Show("Please select a user.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 UserType.Focus();
+                String usertype = UserType.Text;
                 return;
             }
 
@@ -91,13 +97,28 @@ namespace RestaurantManager
                 return;
             }
 
-            IUserRepository repository = new UserRepository();
-            bool result = await repository.Insert(new User() { FullName = txtFullName.Text, Password = txtPass.Text, Email = txtEmail.Text, UserType = UserType.Text });
+            MySQLConnection db = new MySQLConnection();
+            db.OpenConn();
+            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO login (user_name,passwords) VALUES (@un,@pass)", db.getConnection());
+            mySqlCommand.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
+            mySqlCommand.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
+
             
-            if (result)
-                MessageBox.Show("You have successfully signed up!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if(mySqlCommand.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("Account created");
+            }
             else
-                MessageBox.Show("Error!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            {
+                MessageBox.Show("Account not created");
+            }
+            db.CloseConn();
+         
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
