@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="AppHelper.cs" />
     <Compile Include="MySQLConnection.cs" />
+    <Compile Include="SignedIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignedIn.Designer.cs">
+      <DependentUpon>SignedIn.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="UserRepository.cs" />
@@ -107,6 +113,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="2D.resx">
       <DependentUpon>2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignedIn.resx">
+      <DependentUpon>SignedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

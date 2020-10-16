@@ -67,6 +67,9 @@ namespace RestaurantManager
             if(table.Rows.Count > 0)
             {
                 MessageBox.Show("Logged in");
+                var nextForm = new SignedIn();
+                nextForm.Show();
+                this.Close();
             }
             else
             {
