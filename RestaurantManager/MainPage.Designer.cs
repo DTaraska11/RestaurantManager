@@ -36,9 +36,9 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.LogOut = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,21 +106,13 @@
             this.button8.TabIndex = 10;
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(-59, 117);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 673);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Ink Free", 10.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Orchid;
-            this.textBox1.Location = new System.Drawing.Point(0, 78);
+            this.textBox1.Location = new System.Drawing.Point(1, 70);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(640, 41);
+            this.textBox1.Size = new System.Drawing.Size(467, 53);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "~~ANNOUNCEMENTS! ~~ ANNOUNCEMENTS! ~~ ANNOUCEMENTS~~ANNOUNCMENTS ~~ ANNOUNCMENTS " +
     "~~ ANNOUNCMENTS~~ANNOUNCMENTS~~";
@@ -132,13 +124,26 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // LogOut
+            // 
+            this.LogOut.BackColor = System.Drawing.Color.LavenderBlush;
+            this.LogOut.Font = new System.Drawing.Font("Lucida Console", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.LogOut.Location = new System.Drawing.Point(474, 70);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(166, 41);
+            this.LogOut.TabIndex = 0;
+            this.LogOut.Text = "Log Out";
+            this.LogOut.UseVisualStyleBackColor = false;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
+            // 
             // MainPage
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(640, 798);
+            this.Controls.Add(this.LogOut);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainPage";
@@ -158,8 +163,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button LogOut;
     }
 }

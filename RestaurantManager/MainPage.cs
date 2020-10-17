@@ -34,5 +34,11 @@ namespace RestaurantManager
         {
 
         }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            var nextForm = new Welcome();
+            nextForm.Show();
+        }
     }
 }
