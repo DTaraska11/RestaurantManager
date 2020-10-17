@@ -107,6 +107,9 @@ namespace RestaurantManager
             if(mySqlCommand.ExecuteNonQuery() == 1)
             {
                 MessageBox.Show("Account created");
+                var nextForm = new MainPage();
+                nextForm.Show();
+                this.Close();
             }
             else
             {
