@@ -77,15 +77,8 @@ namespace RestaurantManager
                 return;
             }
 
-            //empty select user field
-            if (string.IsNullOrEmpty(UserType.Text))
-            {
-                MessageBox.Show("Please select a user.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                UserType.Focus();
-                String usertype = UserType.Text;
-                return;
-            }
-
+            
+        
 
             if (txtPass.Text != txtConfirmPass.Text)
             {
@@ -99,26 +92,59 @@ namespace RestaurantManager
 
             MySQLConnection db = new MySQLConnection();
             db.OpenConn();
-            MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO login (user_name,passwords) VALUES (@un,@pass)", db.getConnection());
-            mySqlCommand.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
-            mySqlCommand.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
-
-            
-            if(mySqlCommand.ExecuteNonQuery() == 1)
+            if (checkUsername())
             {
-                MessageBox.Show("Account created");
-                var nextForm = new MainPage();
-                nextForm.Show();
-                this.Close();
+                MessageBox.Show("This username already exists, please select a different one");
             }
             else
             {
-                MessageBox.Show("Account not created");
+                MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO login (user_name,passwords) VALUES (@un,@pass)", db.getConnection());
+                mySqlCommand.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
+                mySqlCommand.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
+
+
+                if (mySqlCommand.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Account created");
+                    var nextForm = new MainPage();
+                    nextForm.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Account not created");
+                }
+                db.CloseConn();
             }
-            db.CloseConn();
+          
          
         }
 
+        public Boolean checkUsername()
+        {
+
+            MySQLConnection db = new MySQLConnection();
+            String username = txtFullName.Text;
+            
+
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM login WHERE user_name = @usn", db.getConnection());
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
+            
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+            
+        }
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
 

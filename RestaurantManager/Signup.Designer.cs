@@ -32,8 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.butSignUp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UserType = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtConfirmPass = new System.Windows.Forms.TextBox();
@@ -78,8 +76,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.UserType);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtConfirmPass);
@@ -93,34 +89,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 151);
             this.panel1.TabIndex = 12;
-            // 
-            // UserType
-            // 
-            this.UserType.AllowDrop = true;
-            this.UserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.UserType.FormattingEnabled = true;
-            this.UserType.Items.AddRange(new object[] {
-            "Customer",
-            "Employee",
-            "Manager",
-            "Owner"});
-            this.UserType.Location = new System.Drawing.Point(128, 114);
-            this.UserType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.UserType.Name = "UserType";
-            this.UserType.Size = new System.Drawing.Size(101, 21);
-            this.UserType.TabIndex = 13;
-            this.UserType.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("NSimSun", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(36, 116);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 11);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Select User:";
             // 
             // label6
             // 
@@ -256,9 +224,7 @@
         private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox UserType;
         private System.Windows.Forms.Label labMsg;
         private System.Windows.Forms.LinkLabel linkLabel1;
     }
