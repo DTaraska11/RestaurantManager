@@ -25,7 +25,8 @@ namespace RestaurantManager
             
             var nextForm = new Signin();
             nextForm.Show();
-            
+            this.Hide();
+
 
         }
 
@@ -35,6 +36,7 @@ namespace RestaurantManager
                     
                     var nextForm = new Signup();
                     nextForm.Show();
+                    this.Hide();
                     
 
         }
