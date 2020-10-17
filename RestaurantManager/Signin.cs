@@ -88,6 +88,7 @@ namespace RestaurantManager
         {
             var nextForm = new Signup();
             nextForm.Show();
+            this.Close(); 
         }
     }
 }

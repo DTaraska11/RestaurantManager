@@ -128,6 +128,7 @@ namespace RestaurantManager
         {
             var nextForm = new Signin();
             nextForm.Show();
+            this.Close();
 
         }
     }
