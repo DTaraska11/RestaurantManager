@@ -38,10 +38,6 @@ namespace RestaurantManager
 
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -67,7 +63,7 @@ namespace RestaurantManager
             if(table.Rows.Count > 0)
             {
                 MessageBox.Show("Logged in");
-                var nextForm = new SignedIn();
+                var nextForm = new MainPage();
                 nextForm.Show();
                 this.Close();
             }
