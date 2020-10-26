@@ -46,7 +46,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.textBox1);
             this.Name = "MyCart";
-            this.Size = new System.Drawing.Size(566, 455);
+            this.Size = new System.Drawing.Size(619, 387);
             this.ResumeLayout(false);
             this.PerformLayout();
 

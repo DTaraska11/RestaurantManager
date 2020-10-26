@@ -44,13 +44,12 @@
             this.search = new System.Windows.Forms.TextBox();
             this.LogOut = new System.Windows.Forms.Button();
             this.MenuPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dessert2 = new RestaurantManager.Dessert();
+            this.drinks2 = new RestaurantManager.Drinks();
+            this.food2 = new RestaurantManager.Food();
+            this.snacks2 = new RestaurantManager.Snacks();
+            this.myCart2 = new RestaurantManager.MyCart();
             this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.drinks1 = new RestaurantManager.Drinks();
-            this.snacks1 = new RestaurantManager.Snacks();
-            this.food1 = new RestaurantManager.Food();
-            this.dessert1 = new RestaurantManager.Dessert();
-            this.myCart1 = new RestaurantManager.MyCart();
             this.MenuPanel.SuspendLayout();
             this.HomePanel.SuspendLayout();
             this.MenuPanel2.SuspendLayout();
@@ -210,9 +209,9 @@
             // 
             this.search.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Orchid;
-            this.search.Location = new System.Drawing.Point(74, 85);
+            this.search.Location = new System.Drawing.Point(5, 85);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(398, 53);
+            this.search.Size = new System.Drawing.Size(467, 53);
             this.search.TabIndex = 19;
             this.search.Text = "search menu";
             // 
@@ -230,66 +229,63 @@
             // 
             // MenuPanel2
             // 
-            this.MenuPanel2.Controls.Add(this.drinks1);
-            this.MenuPanel2.Controls.Add(this.snacks1);
-            this.MenuPanel2.Controls.Add(this.food1);
-            this.MenuPanel2.Controls.Add(this.dessert1);
-            this.MenuPanel2.Controls.Add(this.myCart1);
-            this.MenuPanel2.Location = new System.Drawing.Point(15, 335);
+            this.MenuPanel2.Controls.Add(this.drinks2);
+            this.MenuPanel2.Controls.Add(this.dessert2);
+            this.MenuPanel2.Controls.Add(this.food2);
+            this.MenuPanel2.Controls.Add(this.snacks2);
+            this.MenuPanel2.Controls.Add(this.myCart2);
+            this.MenuPanel2.Location = new System.Drawing.Point(15, 331);
             this.MenuPanel2.Name = "MenuPanel2";
-            this.MenuPanel2.Size = new System.Drawing.Size(566, 455);
+            this.MenuPanel2.Size = new System.Drawing.Size(619, 387);
             this.MenuPanel2.TabIndex = 21;
+            // 
+            // dessert2
+            // 
+            this.dessert2.AutoScroll = true;
+            this.dessert2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dessert2.Location = new System.Drawing.Point(3, 396);
+            this.dessert2.Name = "dessert2";
+            this.dessert2.Size = new System.Drawing.Size(619, 387);
+            this.dessert2.TabIndex = 3;
+            // 
+            // drinks2
+            // 
+            this.drinks2.AutoScroll = true;
+            this.drinks2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.drinks2.Location = new System.Drawing.Point(3, 3);
+            this.drinks2.Name = "drinks2";
+            this.drinks2.Size = new System.Drawing.Size(619, 387);
+            this.drinks2.TabIndex = 0;
+            // 
+            // food2
+            // 
+            this.food2.AutoScroll = true;
+            this.food2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.food2.Location = new System.Drawing.Point(3, 789);
+            this.food2.Name = "food2";
+            this.food2.Size = new System.Drawing.Size(619, 387);
+            this.food2.TabIndex = 2;
+            // 
+            // snacks2
+            // 
+            this.snacks2.AutoScroll = true;
+            this.snacks2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.snacks2.Location = new System.Drawing.Point(3, 1182);
+            this.snacks2.Name = "snacks2";
+            this.snacks2.Size = new System.Drawing.Size(619, 387);
+            this.snacks2.TabIndex = 1;
+            // 
+            // myCart2
+            // 
+            this.myCart2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.myCart2.Location = new System.Drawing.Point(3, 1575);
+            this.myCart2.Name = "myCart2";
+            this.myCart2.Size = new System.Drawing.Size(619, 387);
+            this.myCart2.TabIndex = 5;
             // 
             // usersTableAdapter1
             // 
             this.usersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(597, 339);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(34, 454);
-            this.vScrollBar1.TabIndex = 22;
-            // 
-            // drinks1
-            // 
-            this.drinks1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.drinks1.Location = new System.Drawing.Point(3, 3);
-            this.drinks1.Name = "drinks1";
-            this.drinks1.Size = new System.Drawing.Size(566, 455);
-            this.drinks1.TabIndex = 0;
-            // 
-            // snacks1
-            // 
-            this.snacks1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.snacks1.Location = new System.Drawing.Point(3, 464);
-            this.snacks1.Name = "snacks1";
-            this.snacks1.Size = new System.Drawing.Size(566, 455);
-            this.snacks1.TabIndex = 1;
-            // 
-            // food1
-            // 
-            this.food1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.food1.Location = new System.Drawing.Point(3, 925);
-            this.food1.Name = "food1";
-            this.food1.Size = new System.Drawing.Size(566, 455);
-            this.food1.TabIndex = 2;
-            // 
-            // dessert1
-            // 
-            this.dessert1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dessert1.Location = new System.Drawing.Point(3, 1386);
-            this.dessert1.Name = "dessert1";
-            this.dessert1.Size = new System.Drawing.Size(566, 455);
-            this.dessert1.TabIndex = 3;
-            // 
-            // myCart1
-            // 
-            this.myCart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.myCart1.Location = new System.Drawing.Point(3, 1847);
-            this.myCart1.Name = "myCart1";
-            this.myCart1.Size = new System.Drawing.Size(566, 455);
-            this.myCart1.TabIndex = 5;
             // 
             // Menu
             // 
@@ -301,7 +297,6 @@
             this.Controls.Add(this.search);
             this.Controls.Add(this.LogOut);
             this.Controls.Add(this.MenuPanel);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.MenuPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
@@ -332,11 +327,15 @@
         private System.Windows.Forms.Button MYCART;
         private System.Windows.Forms.FlowLayoutPanel MenuPanel2;
         private AppDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
         private Drinks drinks1;
         private Snacks snacks1;
         private Food food1;
         private Dessert dessert1;
         private MyCart myCart1;
+        private Drinks drinks2;
+        private Food food2;
+        private Snacks snacks2;
+        private Dessert dessert2;
+        private MyCart myCart2;
     }
 }
