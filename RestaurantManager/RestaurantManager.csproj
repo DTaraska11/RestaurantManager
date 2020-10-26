@@ -69,6 +69,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainCustomer.Designer.cs">
+      <DependentUpon>MainCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainEmployee.Designer.cs">
+      <DependentUpon>MainEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainManager.Designer.cs">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +99,12 @@
       <DependentUpon>AppDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AppHelper.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MySQLConnection.cs" />
     <Compile Include="SignedIn.cs">
       <SubType>Form</SubType>
@@ -111,8 +135,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainCustomer.resx">
+      <DependentUpon>MainCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainEmployee.resx">
+      <DependentUpon>MainEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainManager.resx">
+      <DependentUpon>MainManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignedIn.resx">
       <DependentUpon>SignedIn.cs</DependentUpon>
