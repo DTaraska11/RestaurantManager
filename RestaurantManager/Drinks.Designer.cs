@@ -77,7 +77,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(261, 87);
+            this.button2.Location = new System.Drawing.Point(295, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 185);
             this.button2.TabIndex = 2;
@@ -90,7 +90,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(480, 87);
+            this.button3.Location = new System.Drawing.Point(538, 87);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(169, 185);
             this.button3.TabIndex = 3;
@@ -103,7 +103,7 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(696, 87);
+            this.button4.Location = new System.Drawing.Point(782, 87);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 185);
             this.button4.TabIndex = 4;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "Drinks";
-            this.Size = new System.Drawing.Size(929, 387);
+            this.Size = new System.Drawing.Size(929, 353);
             this.Load += new System.EventHandler(this.Drinks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).EndInit();
             this.ResumeLayout(false);

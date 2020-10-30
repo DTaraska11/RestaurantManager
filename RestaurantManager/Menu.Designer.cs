@@ -141,6 +141,7 @@
             this.MYCART.Text = "MY CART";
             this.MYCART.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MYCART.UseVisualStyleBackColor = false;
+            this.MYCART.Click += new System.EventHandler(this.MYCART_Click);
             // 
             // TwoD
             // 
