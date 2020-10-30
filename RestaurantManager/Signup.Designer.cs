@@ -197,7 +197,7 @@
             this.label5.Size = new System.Drawing.Size(75, 11);
             this.label5.TabIndex = 9;
             this.label5.Text = "Username: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // txtConfirmPass
             // 
@@ -329,7 +329,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Signup";
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.Signup_Load);
+            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

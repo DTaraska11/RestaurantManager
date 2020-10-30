@@ -15,30 +15,14 @@ namespace RestaurantManager
 {
     public partial class Signup : Form
     {
+
+        User user;
+
         public Signup()
         {
             InitializeComponent();
         }
-
-      
-
-       
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Signup_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void butSignUp_Click(object sender, EventArgs e)
         {
 
@@ -143,7 +127,8 @@ namespace RestaurantManager
                 if (mySqlCommand.ExecuteNonQuery() == 1 && mySqlCommand2.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Account created");
-                    var nextForm = new MainPage();
+                    user = setUser(maxID + 1);
+                    var nextForm = new MainPage(user);
                     nextForm.Show();
                     this.Close();
                 }
@@ -268,6 +253,53 @@ namespace RestaurantManager
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+        public User setUser(int userID)
+        {
+
+            MySQLConnection db = new MySQLConnection();
+            MySqlCommand command = new MySqlCommand("SELECT parent_id FROM staff_info WHERE id = @userID", db.getConnection());
+            command.Parameters.Add("@userID", MySqlDbType.VarChar).Value = userID;
+            MySqlDataReader reader = null;
+
+            int permissionLevel = 0;
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    permissionLevel = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+
+            User newUser = new User(permissionLevel);
+            return newUser;
+            /*
+            MySqlCommand command2 = new MySqlCommand("SELECT username FROM staff_info WHERE userID = @userID", db.getConnection());
+            command.Parameters.Add("@userID", MySqlDbType.VarChar).Value = userID;
+            
+
+            int permissionLevel = 0;
+            try
+            {
+                reader = command2.ExecuteReader();
+                while (reader.Read())
+                {
+                    permissionLevel = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+            User newUser = new User();
+            */
         }
     }
 }
