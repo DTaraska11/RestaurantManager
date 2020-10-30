@@ -21,7 +21,7 @@ namespace RestaurantManager
         {
 
             int userAuth = user.getAuthority();
-            if( userAuth == 0)
+            if( userAuth != 0)
             {
                 button8.Enabled = false;
                 button5.Enabled = false;
