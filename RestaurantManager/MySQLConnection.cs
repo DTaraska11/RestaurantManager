@@ -66,8 +66,8 @@ namespace RestaurantManager
 
         public void OpenConn()
         {
-            string SqlCon = "server=98.115.187.178;port=9005;user=root;password=root;database=Restaurant;";
-            conn = new MySqlConnection(SqlCon);
+           string SqlCon = "server=98.115.187.178;port=9005;user=root;password=root;database=Restaurant;";
+        conn = new MySqlConnection(SqlCon);
             conn.Open();
         }
         public void CloseConn()
