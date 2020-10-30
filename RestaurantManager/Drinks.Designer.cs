@@ -43,7 +43,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("MV Boli", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Location = new System.Drawing.Point(194, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 51);
             this.textBox1.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(36, 87);
+            this.button1.Location = new System.Drawing.Point(102, 87);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 185);
             this.button1.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(295, 87);
+            this.button2.Location = new System.Drawing.Point(333, 87);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(169, 185);
             this.button2.TabIndex = 2;
@@ -90,9 +90,9 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(538, 87);
+            this.button3.Location = new System.Drawing.Point(102, 301);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(169, 185);
+            this.button3.Size = new System.Drawing.Size(169, 161);
             this.button3.TabIndex = 3;
             this.button3.Text = "alcohol";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -103,9 +103,9 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(782, 87);
+            this.button4.Location = new System.Drawing.Point(333, 301);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(169, 185);
+            this.button4.Size = new System.Drawing.Size(169, 161);
             this.button4.TabIndex = 4;
             this.button4.Text = "soda";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "Drinks";
-            this.Size = new System.Drawing.Size(929, 353);
+            this.Size = new System.Drawing.Size(585, 387);
             this.Load += new System.EventHandler(this.Drinks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).EndInit();
             this.ResumeLayout(false);

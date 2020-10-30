@@ -61,7 +61,6 @@
             this.button4.Size = new System.Drawing.Size(193, 59);
             this.button4.TabIndex = 4;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -113,7 +112,7 @@
             this.textBox1.ForeColor = System.Drawing.Color.Orchid;
             this.textBox1.Location = new System.Drawing.Point(1, 73);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(467, 53);
+            this.textBox1.Size = new System.Drawing.Size(467, 30);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "~~ANNOUNCEMENTS! ~~ ANNOUNCEMENTS! ~~ ANNOUCEMENTS~~ANNOUNCMENTS ~~ ANNOUNCMENTS " +
     "~~ ANNOUNCMENTS~~ANNOUNCMENTS~~";

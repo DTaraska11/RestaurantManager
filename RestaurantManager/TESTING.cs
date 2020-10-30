@@ -10,22 +10,11 @@ using System.Windows.Forms;
 
 namespace RestaurantManager
 {
-    public partial class SignedIn : Form
+    public partial class TESTING : Form
     {
-        public SignedIn()
+        public TESTING()
         {
             InitializeComponent();
-        }
-
-        private void SignedIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Signed out");
-            
         }
     }
 }

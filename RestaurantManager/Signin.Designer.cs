@@ -50,7 +50,7 @@
             this.label2.Size = new System.Drawing.Size(68, 11);
             this.label2.TabIndex = 2;
             this.label2.Text = "Username:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            
             // 
             // textBox2
             // 
@@ -93,7 +93,7 @@
             this.label5.Size = new System.Drawing.Size(479, 40);
             this.label5.TabIndex = 9;
             this.label5.Text = "      SIGN IN               ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // button2
             // 
@@ -120,7 +120,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(246, 77);
             this.panel1.TabIndex = 11;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // linkLabel1
             // 
@@ -151,7 +151,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Signin";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

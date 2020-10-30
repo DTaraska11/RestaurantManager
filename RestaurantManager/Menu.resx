@@ -341,7 +341,7 @@
         QmCC
 </value>
   </data>
-  <data name="MYCART.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ORDER.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAB61JREFUeF7t3bFy40QYB/BtoKKg4AF4AIahpCM1Q5E34HoKKOhJR5s3uLzB3Rvc
