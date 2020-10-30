@@ -66,7 +66,7 @@ namespace RestaurantManager
 
         public void OpenConn()
         {
-            string SqlCon = "datasource=ec2-3-138-33-4.us-east-2.compute.amazonaws.com;port=9005;Initial Catalog='Restaurant';user=root;password=root";
+            string SqlCon = "server=98.115.187.178;port=9005;user=root;password=root;database=Restaurant;";
             conn = new MySqlConnection(SqlCon);
             conn.Open();
         }

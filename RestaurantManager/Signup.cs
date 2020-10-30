@@ -41,10 +41,26 @@ namespace RestaurantManager
 
         private void butSignUp_Click(object sender, EventArgs e)
         {
+
+
+            if (string.IsNullOrEmpty(textBox_FirstName.Text))
+            {
+                MessageBox.Show("Please enter a first name.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_FirstName.Focus();
+                String name = textBox_FirstName.Text;
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox_LastName.Text))
+            {
+                MessageBox.Show("Please enter a last name.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBox_LastName.Focus();
+                String name = textBox_LastName.Text;
+                return;
+            }
             //empty name field
             if (string.IsNullOrEmpty(txtFullName.Text))
             {
-                MessageBox.Show("Please enter your name.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a username.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtFullName.Focus();
                 String name = txtFullName.Text;
                 return;
@@ -98,12 +114,33 @@ namespace RestaurantManager
             }
             else
             {
-                MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO login (user_name,passwords) VALUES (@un,@pass)", db.getConnection());
+
+                int maxID = getMaxID();
+                MySqlCommand mySqlCommand = new MySqlCommand("INSERT INTO login (user_name,passwords,id) VALUES (@un,@pass,@id)", db.getConnection());
                 mySqlCommand.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
                 mySqlCommand.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
+                mySqlCommand.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID+1;
 
 
-                if (mySqlCommand.ExecuteNonQuery() == 1)
+                MySqlCommand mySqlCommand2 = new MySqlCommand("INSERT INTO staff_info (first_name,last_name,id,email,parent_id,address_id,phone) VALUES (@un,@pass,@id,@email,@parent,@address,@phone)", db.getConnection());
+                mySqlCommand2.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
+                mySqlCommand2.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
+                mySqlCommand2.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID + 1;
+                mySqlCommand2.Parameters.Add("@email", MySqlDbType.VarChar).Value = txtEmail.Text;
+                if (comboBox1.SelectedItem.Equals("Owner"))
+                {
+                    mySqlCommand2.Parameters.Add("@parent", MySqlDbType.Int32).Value = 0;
+                }
+                else
+                {
+                    mySqlCommand2.Parameters.Add("@parent", MySqlDbType.Int32).Value = 1;
+                }
+                mySqlCommand2.Parameters.Add("@address", MySqlDbType.VarChar).Value = textBox_Address.Text;
+                mySqlCommand2.Parameters.Add("@phone", MySqlDbType.VarChar).Value = textBox_Phone.Text;
+
+
+
+                if (mySqlCommand.ExecuteNonQuery() == 1 && mySqlCommand2.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Account created");
                     var nextForm = new MainPage();
@@ -119,7 +156,67 @@ namespace RestaurantManager
           
          
         }
+        public int getMaxID()
+        {
+            int maxID = 0;
+            
+            MySQLConnection db = new MySQLConnection();
+            MySqlCommand command = new MySqlCommand("SELECT MAX(id) FROM login", db.getConnection());
+            MySqlDataReader reader = null;
+            int maxID_login = 0;
+            int maxID_staff = 0;
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    maxID_login = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
 
+
+            MySqlCommand command2 = new MySqlCommand("SELECT MAX(id) FROM staff_info", db.getConnection());
+            MySqlDataReader reader2 = null;
+            
+            
+            try
+            {
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    maxID_staff = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+
+
+
+
+            if (maxID_login == maxID_staff)
+            {
+                return maxID_login;
+            }
+            else if (maxID_login > maxID_staff)
+            {
+                return maxID_login;
+            }
+            else
+            {
+                return maxID_staff;
+            }
+
+            
+
+        }
         public Boolean checkUsername()
         {
 
@@ -164,6 +261,11 @@ namespace RestaurantManager
         }
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
