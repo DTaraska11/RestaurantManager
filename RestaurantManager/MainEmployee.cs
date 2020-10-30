@@ -16,5 +16,12 @@ namespace RestaurantManager
         {
             InitializeComponent();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var nextForm = new Menu();
+            nextForm.Show();
+            this.Hide();
+        }
     }
 }

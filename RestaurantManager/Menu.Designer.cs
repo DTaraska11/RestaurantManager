@@ -44,8 +44,8 @@
             this.search = new System.Windows.Forms.TextBox();
             this.LogOut = new System.Windows.Forms.Button();
             this.MenuPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dessert2 = new RestaurantManager.Dessert();
             this.drinks2 = new RestaurantManager.Drinks();
+            this.dessert2 = new RestaurantManager.Dessert();
             this.food2 = new RestaurantManager.Food();
             this.snacks2 = new RestaurantManager.Snacks();
             this.myCart2 = new RestaurantManager.MyCart();
@@ -88,9 +88,9 @@
             this.DRINKS.ForeColor = System.Drawing.Color.BlueViolet;
             this.DRINKS.Image = ((System.Drawing.Image)(resources.GetObject("DRINKS.Image")));
             this.DRINKS.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.DRINKS.Location = new System.Drawing.Point(3, 0);
+            this.DRINKS.Location = new System.Drawing.Point(0, 0);
             this.DRINKS.Name = "DRINKS";
-            this.DRINKS.Size = new System.Drawing.Size(128, 153);
+            this.DRINKS.Size = new System.Drawing.Size(127, 152);
             this.DRINKS.TabIndex = 11;
             this.DRINKS.Text = "DRINKS";
             this.DRINKS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -136,7 +136,7 @@
             this.MYCART.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.MYCART.Location = new System.Drawing.Point(488, 0);
             this.MYCART.Name = "MYCART";
-            this.MYCART.Size = new System.Drawing.Size(132, 149);
+            this.MYCART.Size = new System.Drawing.Size(132, 152);
             this.MYCART.TabIndex = 13;
             this.MYCART.Text = "MY CART";
             this.MYCART.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -162,6 +162,7 @@
             this.MenuButton.Size = new System.Drawing.Size(116, 59);
             this.MenuButton.TabIndex = 5;
             this.MenuButton.UseVisualStyleBackColor = false;
+            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // Reservation
             // 
@@ -209,7 +210,7 @@
             // 
             this.search.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Orchid;
-            this.search.Location = new System.Drawing.Point(5, 85);
+            this.search.Location = new System.Drawing.Point(5, 82);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(467, 53);
             this.search.TabIndex = 19;
@@ -226,6 +227,7 @@
             this.LogOut.TabIndex = 20;
             this.LogOut.Text = "Log Out";
             this.LogOut.UseVisualStyleBackColor = false;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // MenuPanel2
             // 
@@ -239,15 +241,6 @@
             this.MenuPanel2.Size = new System.Drawing.Size(619, 387);
             this.MenuPanel2.TabIndex = 21;
             // 
-            // dessert2
-            // 
-            this.dessert2.AutoScroll = true;
-            this.dessert2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.dessert2.Location = new System.Drawing.Point(3, 396);
-            this.dessert2.Name = "dessert2";
-            this.dessert2.Size = new System.Drawing.Size(619, 387);
-            this.dessert2.TabIndex = 3;
-            // 
             // drinks2
             // 
             this.drinks2.AutoScroll = true;
@@ -256,6 +249,15 @@
             this.drinks2.Name = "drinks2";
             this.drinks2.Size = new System.Drawing.Size(619, 387);
             this.drinks2.TabIndex = 0;
+            // 
+            // dessert2
+            // 
+            this.dessert2.AutoScroll = true;
+            this.dessert2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.dessert2.Location = new System.Drawing.Point(3, 396);
+            this.dessert2.Name = "dessert2";
+            this.dessert2.Size = new System.Drawing.Size(619, 387);
+            this.dessert2.TabIndex = 3;
             // 
             // food2
             // 
@@ -289,8 +291,7 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(644, 798);
             this.Controls.Add(this.HomePanel);

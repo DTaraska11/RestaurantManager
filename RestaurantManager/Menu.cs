@@ -29,42 +29,45 @@ namespace RestaurantManager
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            SetActivePanel(drinks1);
+            
         }
         private void SetActivePanel(UserControl control) 
         {
-            // disable controls
-            drinks1.Visible = false;
-            snacks1.Visible = false;
-            food1.Visible = false;
-            dessert1.Visible = false;
-            myCart1.Visible = false;
-
-            //enable control
-            control.Visible = true;
+           
 
 
         
         }
         private void DRINKS_Click(object sender, EventArgs e)
         {
-            SetActivePanel(drinks1);
+           
 
         }
 
         private void SNACKS_Click(object sender, EventArgs e)
         {
-            SetActivePanel(snacks1);
         }
 
         private void FOOD_Click(object sender, EventArgs e)
         {
-            SetActivePanel(food1);
+           
         }
 
         private void DESSERT_Click(object sender, EventArgs e)
         {
-            SetActivePanel(dessert1);
+            
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new Welcome();
+            nextForm.Show();
         }
     }
 }
