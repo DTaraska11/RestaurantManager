@@ -61,7 +61,6 @@
             this.button5.Size = new System.Drawing.Size(116, 59);
             this.button5.TabIndex = 5;
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -123,7 +122,7 @@
             this.LogOut.Text = "Log Out";
             this.LogOut.UseVisualStyleBackColor = false;
             // 
-            // MainCustomer
+            // MainEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -133,7 +132,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.LogOut);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MainCustomer";
+            this.Name = "MainEmployee";
             this.Text = "MainEmployee";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

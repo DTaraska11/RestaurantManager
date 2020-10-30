@@ -34,7 +34,7 @@
             this.DRINKS = new System.Windows.Forms.Button();
             this.SNACKS = new System.Windows.Forms.Button();
             this.DESSERT = new System.Windows.Forms.Button();
-            this.MYCART = new System.Windows.Forms.Button();
+            this.ORDER = new System.Windows.Forms.Button();
             this.TwoD = new System.Windows.Forms.Button();
             this.MenuButton = new System.Windows.Forms.Button();
             this.Reservation = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.dessert2 = new RestaurantManager.Dessert();
             this.food2 = new RestaurantManager.Food();
             this.snacks2 = new RestaurantManager.Snacks();
-            this.myCart2 = new RestaurantManager.MyCart();
+            this.myCart2 = new RestaurantManager.OrderItem();
             this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
             this.MenuPanel.SuspendLayout();
             this.HomePanel.SuspendLayout();
@@ -76,7 +76,7 @@
             this.MenuPanel.Controls.Add(this.SNACKS);
             this.MenuPanel.Controls.Add(this.FOOD);
             this.MenuPanel.Controls.Add(this.DESSERT);
-            this.MenuPanel.Controls.Add(this.MYCART);
+            this.MenuPanel.Controls.Add(this.ORDER);
             this.MenuPanel.Location = new System.Drawing.Point(12, 176);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(620, 152);
@@ -88,9 +88,9 @@
             this.DRINKS.ForeColor = System.Drawing.Color.BlueViolet;
             this.DRINKS.Image = ((System.Drawing.Image)(resources.GetObject("DRINKS.Image")));
             this.DRINKS.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.DRINKS.Location = new System.Drawing.Point(0, 0);
+            this.DRINKS.Location = new System.Drawing.Point(3, 0);
             this.DRINKS.Name = "DRINKS";
-            this.DRINKS.Size = new System.Drawing.Size(127, 152);
+            this.DRINKS.Size = new System.Drawing.Size(128, 153);
             this.DRINKS.TabIndex = 11;
             this.DRINKS.Text = "DRINKS";
             this.DRINKS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -128,20 +128,19 @@
             this.DESSERT.UseVisualStyleBackColor = false;
             this.DESSERT.Click += new System.EventHandler(this.DESSERT_Click);
             // 
-            // MYCART
+            // ORDER
             // 
-            this.MYCART.BackColor = System.Drawing.Color.White;
-            this.MYCART.ForeColor = System.Drawing.Color.Gold;
-            this.MYCART.Image = ((System.Drawing.Image)(resources.GetObject("MYCART.Image")));
-            this.MYCART.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MYCART.Location = new System.Drawing.Point(488, 0);
-            this.MYCART.Name = "MYCART";
-            this.MYCART.Size = new System.Drawing.Size(132, 152);
-            this.MYCART.TabIndex = 13;
-            this.MYCART.Text = "MY CART";
-            this.MYCART.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.MYCART.UseVisualStyleBackColor = false;
-            this.MYCART.Click += new System.EventHandler(this.MYCART_Click);
+            this.ORDER.BackColor = System.Drawing.Color.White;
+            this.ORDER.ForeColor = System.Drawing.Color.Gold;
+            this.ORDER.Image = ((System.Drawing.Image)(resources.GetObject("ORDER.Image")));
+            this.ORDER.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ORDER.Location = new System.Drawing.Point(488, 0);
+            this.ORDER.Name = "ORDER";
+            this.ORDER.Size = new System.Drawing.Size(132, 149);
+            this.ORDER.TabIndex = 13;
+            this.ORDER.Text = "ORDER";
+            this.ORDER.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ORDER.UseVisualStyleBackColor = false;
             // 
             // TwoD
             // 
@@ -163,7 +162,6 @@
             this.MenuButton.Size = new System.Drawing.Size(116, 59);
             this.MenuButton.TabIndex = 5;
             this.MenuButton.UseVisualStyleBackColor = false;
-            this.MenuButton.Click += new System.EventHandler(this.MenuButton_Click);
             // 
             // Reservation
             // 
@@ -211,7 +209,7 @@
             // 
             this.search.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Orchid;
-            this.search.Location = new System.Drawing.Point(5, 82);
+            this.search.Location = new System.Drawing.Point(5, 85);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(467, 53);
             this.search.TabIndex = 19;
@@ -228,7 +226,6 @@
             this.LogOut.TabIndex = 20;
             this.LogOut.Text = "Log Out";
             this.LogOut.UseVisualStyleBackColor = false;
-            this.LogOut.Click += new System.EventHandler(this.LogOut_Click);
             // 
             // MenuPanel2
             // 
@@ -292,7 +289,8 @@
             // 
             // Menu
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(644, 798);
             this.Controls.Add(this.HomePanel);
@@ -326,18 +324,18 @@
         private System.Windows.Forms.Button DESSERT;
         private System.Windows.Forms.Button DRINKS;
         private System.Windows.Forms.Button SNACKS;
-        private System.Windows.Forms.Button MYCART;
+        private System.Windows.Forms.Button ORDER;
         private System.Windows.Forms.FlowLayoutPanel MenuPanel2;
         private AppDataSetTableAdapters.UsersTableAdapter usersTableAdapter1;
         private Drinks drinks1;
         private Snacks snacks1;
         private Food food1;
         private Dessert dessert1;
-        private MyCart myCart1;
+        private OrderItem myCart1;
         private Drinks drinks2;
         private Food food2;
         private Snacks snacks2;
         private Dessert dessert2;
-        private MyCart myCart2;
+        private OrderItem myCart2;
     }
 }

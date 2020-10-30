@@ -136,12 +136,6 @@
       <DependentUpon>MyCart.cs</DependentUpon>
     </Compile>
     <Compile Include="MySQLConnection.cs" />
-    <Compile Include="SignedIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SignedIn.Designer.cs">
-      <DependentUpon>SignedIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Snacks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,9 +191,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCart.resx">
       <DependentUpon>MyCart.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SignedIn.resx">
-      <DependentUpon>SignedIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Snacks.resx">
       <DependentUpon>Snacks.cs</DependentUpon>

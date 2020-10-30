@@ -15,7 +15,21 @@ namespace RestaurantManager
         public string Password { get; set; }
         public string Email { get; set; }
         public string UserType { get; set; }
+        public int userAuthority;
 
+        public User(int permissions)
+        {
+            setUserAuthority(permissions);
 
+        }
+
+        public void setUserAuthority(int perm)
+        {
+            this.userAuthority = perm;
+        }
+        public int getAuthority()
+        {
+            return this.userAuthority;
+        }
     }
 }
