@@ -56,5 +56,11 @@ namespace RestaurantManager
             nextForm.Show();
             
         }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            StockClass stock = new StockClass();
+             stock.ShowDialog();
+        }
     }
 }

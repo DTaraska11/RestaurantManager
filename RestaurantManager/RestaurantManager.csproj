@@ -136,11 +136,24 @@
       <DependentUpon>MyCart.cs</DependentUpon>
     </Compile>
     <Compile Include="MySQLConnection.cs" />
+    <Compile Include="MySQLConnection1.cs" />
     <Compile Include="Snacks.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Snacks.Designer.cs">
       <DependentUpon>Snacks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffInfo.Designer.cs">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock.Designer.cs">
+      <DependentUpon>Stock.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="IUserRepository.cs" />
@@ -194,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Snacks.resx">
       <DependentUpon>Snacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffInfo.resx">
+      <DependentUpon>StaffInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock.resx">
+      <DependentUpon>Stock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
