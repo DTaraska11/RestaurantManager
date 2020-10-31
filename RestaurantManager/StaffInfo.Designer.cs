@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_finished = new System.Windows.Forms.Button();
             this.btn_del = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmb_position = new System.Windows.Forms.ComboBox();
             this.lab_position = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.txt_Phone = new System.Windows.Forms.TextBox();
             this.lab_name = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -194,7 +194,7 @@
             this.panel2.Location = new System.Drawing.Point(228, 456);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(670, 54);
+            this.panel2.Size = new System.Drawing.Size(594, 54);
             this.panel2.TabIndex = 1;
             // 
             // btn_finished
@@ -212,7 +212,7 @@
             // 
             // btn_del
             // 
-            this.btn_del.Location = new System.Drawing.Point(1182, 15);
+            this.btn_del.Location = new System.Drawing.Point(498, 15);
             this.btn_del.Margin = new System.Windows.Forms.Padding(2);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(83, 23);
@@ -220,6 +220,18 @@
             this.btn_del.Text = "Del";
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(22, 15);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(83, 23);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Visible = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // panel3
             // 
@@ -245,7 +257,7 @@
             this.panel3.Location = new System.Drawing.Point(228, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(670, 456);
+            this.panel3.Size = new System.Drawing.Size(594, 456);
             this.panel3.TabIndex = 2;
             // 
             // cmb_position
@@ -367,7 +379,7 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(509, 0);
+            this.panel4.Location = new System.Drawing.Point(433, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(157, 452);
@@ -450,30 +462,19 @@
             this.txt_name.Size = new System.Drawing.Size(277, 20);
             this.txt_name.TabIndex = 0;
             // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(22, 15);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(83, 23);
-            this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Visible = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
             // StaffInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 510);
+            this.ClientSize = new System.Drawing.Size(822, 510);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "StaffInfo";
             this.Text = "Staff Information";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaffInfo_FormClosed);
             this.Load += new System.EventHandler(this.PersonalInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);

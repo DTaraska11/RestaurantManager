@@ -21,11 +21,17 @@ namespace RestaurantManager
         Boolean insert = true;
         Boolean add = true;
         Boolean local = false;
+        int authority;
         
         // string strcon = "server=192.168.146.128;user=root;password=root;database=Restaurant;";
         public StaffInfo()
         {
             InitializeComponent();
+        }
+        public StaffInfo(int author)
+        {
+            InitializeComponent();
+            authority = author;
         }
 
         private void PersonalInfo_Load(object sender, EventArgs e)
@@ -117,7 +123,7 @@ namespace RestaurantManager
                 if (e.Node.Parent != null)
                 {
                     txt_name.Text = drv["last_name"].ToString();
-                    if (drv["gender"].ToString() == "male") comBox_gender.SelectedIndex = 0;
+                    if (drv["gender"].ToString() == "Male") comBox_gender.SelectedIndex = 0;
                     else comBox_gender.SelectedIndex = 1;
                     txt_SSN.Text = drv["ssn"].ToString();
                     if (drv["parent_id"].ToString() == "1") cmb_position.SelectedIndex = 0;
@@ -126,7 +132,13 @@ namespace RestaurantManager
                     if (drv["parent_id"].ToString() == "4") cmb_position.SelectedIndex = 3;
                     txt_Phone.Text = drv["phone"].ToString();
                     txt_Address.Text = drv["address_id"].ToString();
-                    //txt_Birthday.Text = drv["Birthday"].ToString();
+                    if (!drv["birthday"].Equals(System.DBNull.Value))
+                    {
+                        dateTimePicker1.Value = Convert.ToDateTime(drv["Birthday"]);
+                    }
+                    else dateTimePicker1.Value = System.DateTime.Today;
+
+
                     txt_Email.Text = drv["email"].ToString();
                     toolStripButton2.Enabled = true;
                     btn_del.Enabled = true;
@@ -368,6 +380,7 @@ namespace RestaurantManager
                 updateData();
             }
             toolStripButton2.Enabled = true;
+            btn_del.Enabled = true;
         }
 
         void initial()
@@ -432,14 +445,17 @@ namespace RestaurantManager
                 toolStripButton1.Text = "cancle";
                 toolStripButton1.Image = imageList1.Images[3];
                 add = false;
+                btn_del.Enabled = false;
             }
             else
             {
                 toolStripButton1.Text = "Add";
                 toolStripButton1.Image = imageList1.Images[2];
                 add = true;
+                btn_del.Enabled = true;
                 initial();
             }
+          
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -459,6 +475,7 @@ namespace RestaurantManager
             btn_add.Enabled = true;
             toolStrip_save.Enabled = true;
             toolStripButton1.Enabled = false;
+            btn_del.Enabled = false;
 
         }
 
@@ -471,6 +488,13 @@ namespace RestaurantManager
                 return true;
             }
             return false;
+        }
+
+        private void StaffInfo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //User user = new User(authority);
+            //var nextForm = new MainPage(user);
+            //nextForm.Show();
         }
     }
     
