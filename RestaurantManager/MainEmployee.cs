@@ -16,5 +16,30 @@ namespace RestaurantManager
         {
             InitializeComponent();
         }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new Welcome();
+            nextForm.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            StockClass stock = new StockClass();
+            stock.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new Menu();
+            nextForm.Show();
+        }
     }
 }

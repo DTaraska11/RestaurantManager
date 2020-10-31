@@ -36,7 +36,9 @@ namespace RestaurantManager
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            var nextForm = new Menu();
+            nextForm.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -61,6 +63,13 @@ namespace RestaurantManager
         {
             StockClass stock = new StockClass();
              stock.ShowDialog();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new StaffInfo();
+            nextForm.Show();
         }
     }
 }
