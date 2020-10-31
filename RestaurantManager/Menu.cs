@@ -24,47 +24,102 @@ namespace RestaurantManager
 
         private void x_Click(object sender, EventArgs e)
         {
+            //food
+            drinks2.Hide();
+            snacks2.Hide();
+            myCart2.Hide();
+            dessert2.Hide();
+            food2.Show();
+            food2.BringToFront();
+
 
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            SetActivePanel(drinks1);
+
+            snacks2.Hide();
+            food2.Hide();
+            dessert2.Hide();
+            myCart2.Hide();
+
         }
-        private void SetActivePanel(UserControl control) 
+        private void SetActivePanel(UserControl control)
         {
-            // disable controls
-            drinks1.Visible = false;
-            snacks1.Visible = false;
-            food1.Visible = false;
-            dessert1.Visible = false;
-            myCart1.Visible = false;
-
-            //enable control
-            control.Visible = true;
 
 
-        
+
+
         }
         private void DRINKS_Click(object sender, EventArgs e)
         {
-            SetActivePanel(drinks1);
+
+            snacks2.Hide();
+            food2.Hide();
+            dessert2.Hide();
+            myCart2.Hide();
+            drinks2.Show();
+            drinks2.BringToFront();
 
         }
 
         private void SNACKS_Click(object sender, EventArgs e)
         {
-            SetActivePanel(snacks1);
+
+            drinks2.Hide();
+            food2.Hide();
+            dessert2.Hide();
+            myCart2.Hide();
+
+            snacks2.Show();
+            snacks2.BringToFront();
+
         }
 
-        private void FOOD_Click(object sender, EventArgs e)
-        {
-            SetActivePanel(food1);
-        }
 
         private void DESSERT_Click(object sender, EventArgs e)
         {
-            SetActivePanel(dessert1);
+            drinks2.Hide();
+            snacks2.Hide();
+            food2.Hide();
+            myCart2.Hide();
+            dessert2.Show();
+            dessert2.BringToFront();
+        }
+
+        private void MenuButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new Welcome();
+            nextForm.Show();
+        }
+
+        private void MYCART_Click(object sender, EventArgs e)
+        {
+            drinks2.Hide();
+            snacks2.Hide();
+            dessert2.Hide();
+            food2.Hide();
+            myCart2.Show();
+            myCart2.BringToFront();
+        }
+
+        private void LogOut_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            var nextForm = new Welcome();
+            nextForm.Show();
+        }
+
+        private void Stock_Click(object sender, EventArgs e)
+        {
+            StockClass stock = new StockClass();
+            stock.ShowDialog();
         }
     }
 }

@@ -194,6 +194,7 @@
             this.Stock.Size = new System.Drawing.Size(103, 59);
             this.Stock.TabIndex = 8;
             this.Stock.UseVisualStyleBackColor = false;
+            this.Stock.Click += new System.EventHandler(this.Stock_Click);
             // 
             // User
             // 
@@ -226,6 +227,7 @@
             this.LogOut.TabIndex = 20;
             this.LogOut.Text = "Log Out";
             this.LogOut.UseVisualStyleBackColor = false;
+            this.LogOut.Click += new System.EventHandler(this.LogOut_Click_1);
             // 
             // MenuPanel2
             // 
