@@ -61,7 +61,7 @@
             this.FOOD.ForeColor = System.Drawing.Color.LimeGreen;
             this.FOOD.Image = ((System.Drawing.Image)(resources.GetObject("FOOD.Image")));
             this.FOOD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FOOD.Location = new System.Drawing.Point(245, 1);
+            this.FOOD.Location = new System.Drawing.Point(245, 2);
             this.FOOD.Name = "FOOD";
             this.FOOD.Size = new System.Drawing.Size(129, 150);
             this.FOOD.TabIndex = 7;
