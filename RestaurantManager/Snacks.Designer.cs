@@ -64,7 +64,7 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.ForeColor = System.Drawing.Color.Cyan;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(338, 301);
+            this.button4.Location = new System.Drawing.Point(338, 327);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(169, 185);
             this.button4.TabIndex = 9;
@@ -77,7 +77,7 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.ForeColor = System.Drawing.Color.Cyan;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(107, 301);
+            this.button3.Location = new System.Drawing.Point(107, 317);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(169, 185);
             this.button3.TabIndex = 8;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Snacks";
-            this.Size = new System.Drawing.Size(585, 387);
+            this.Size = new System.Drawing.Size(551, 387);
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
