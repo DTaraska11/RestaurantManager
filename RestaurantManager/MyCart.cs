@@ -8,5 +8,15 @@ namespace RestaurantManager
         {
             InitializeComponent();
         }
+
+        private void OrderItem_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
