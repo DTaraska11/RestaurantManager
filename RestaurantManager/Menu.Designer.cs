@@ -141,6 +141,7 @@
             this.ORDER.Text = "ORDER";
             this.ORDER.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ORDER.UseVisualStyleBackColor = false;
+            this.ORDER.Click += new System.EventHandler(this.ORDER_Click);
             // 
             // TwoD
             // 
