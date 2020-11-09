@@ -15,7 +15,7 @@ namespace RestaurantManager
 
         private void OrderItem_Load(object sender, System.EventArgs e)
         {
-
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,9 +36,31 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
-                
+                GridFill();
 
             }
         }
+        void GridFill()
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("MenuItemViewAll", mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtblMenuItem = new DataTable();
+                sqlDa.Fill(dtblMenuItem);
+                dgvMenuItem.DataSource = dtblMenuItem;
+                dgvMenuItem.Columns[0].Visible = false;
+            }
+        }
+
+
+       
+
+        private void Search_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
+
 }
