@@ -87,7 +87,7 @@
             this.ADD.ForeColor = System.Drawing.Color.Fuchsia;
             this.ADD.Location = new System.Drawing.Point(717, 185);
             this.ADD.Name = "ADD";
-            this.ADD.Size = new System.Drawing.Size(108, 56);
+            this.ADD.Size = new System.Drawing.Size(118, 56);
             this.ADD.TabIndex = 3;
             this.ADD.Text = "ADD";
             this.ADD.UseVisualStyleBackColor = false;
@@ -95,11 +95,11 @@
             // 
             // DELETE
             // 
-            this.DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DELETE.ForeColor = System.Drawing.Color.Fuchsia;
-            this.DELETE.Location = new System.Drawing.Point(717, 257);
+            this.DELETE.Location = new System.Drawing.Point(717, 277);
             this.DELETE.Name = "DELETE";
-            this.DELETE.Size = new System.Drawing.Size(146, 56);
+            this.DELETE.Size = new System.Drawing.Size(235, 56);
             this.DELETE.TabIndex = 4;
             this.DELETE.Text = "DELETE";
             this.DELETE.UseVisualStyleBackColor = false;

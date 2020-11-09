@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Data;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -93,9 +99,8 @@ namespace RestaurantManager
             {
                 MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
                 MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
-
                 MenuItemID = Convert.ToInt32(dgvMenuItem.CurrentRow.Cells[0].Value.ToString());
-                ADD.Text = "Update";
+                ADD.Text = "UPDATE";
                 DELETE.Enabled = Enabled;
             }
         }
