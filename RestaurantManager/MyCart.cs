@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -15,7 +16,8 @@ namespace RestaurantManager
 
         private void OrderItem_Load(object sender, System.EventArgs e)
         {
-            
+            Clear();
+            GridFill();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,6 +38,7 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
+                Clear();
                 GridFill();
 
             }
@@ -55,11 +58,52 @@ namespace RestaurantManager
         }
 
 
-       
+        void Clear()
+        {
+            MenuItemName.Text  = MenuItemCost.Text = "";
+            MenuItemID = 0;
+            ADD.Text = "Save";
+            DELETE.Enabled = false;
+        }
 
         private void Search_TextChanged(object sender, System.EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, System.EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("MenuItemDeleteByID", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+                Clear();
+                GridFill();
+
+            }
+        }
+
+        private void dgvMenuItem_DoubleClick(object sender, System.EventArgs e)
+        {
+            if (dgvMenuItem.CurrentRow.Index != -1)
+            {
+                MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
+                MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
+
+                MenuItemID = Convert.ToInt32(dgvMenuItem.CurrentRow.Cells[0].Value.ToString());
+                ADD.Text = "Update";
+                DELETE.Enabled = Enabled;
+            }
+        }
+
+       
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 
