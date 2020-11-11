@@ -487,5 +487,10 @@ namespace RestaurantManager
                       e.Handled = true;
            
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

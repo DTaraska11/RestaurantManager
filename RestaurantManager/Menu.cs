@@ -121,5 +121,20 @@ namespace RestaurantManager
             StockClass stock = new StockClass();
             stock.ShowDialog();
         }
+
+        private void ORDER_Click(object sender, EventArgs e)
+        {
+            drinks2.Hide();
+            snacks2.Hide();
+            food2.Hide();
+         
+            dessert2.Hide();   myCart2.Show();
+            myCart2.BringToFront();
+        }
+
+        private void drinks2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
