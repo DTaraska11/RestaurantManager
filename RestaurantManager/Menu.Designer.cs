@@ -44,12 +44,12 @@
             this.search = new System.Windows.Forms.TextBox();
             this.LogOut = new System.Windows.Forms.Button();
             this.MenuPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
             this.drinks2 = new RestaurantManager.Drinks();
             this.dessert2 = new RestaurantManager.Dessert();
             this.food2 = new RestaurantManager.Food();
             this.snacks2 = new RestaurantManager.Snacks();
             this.myCart2 = new RestaurantManager.OrderItem();
-            this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
             this.MenuPanel.SuspendLayout();
             this.HomePanel.SuspendLayout();
             this.MenuPanel2.SuspendLayout();
@@ -136,7 +136,7 @@
             this.ORDER.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ORDER.Location = new System.Drawing.Point(488, 0);
             this.ORDER.Name = "ORDER";
-            this.ORDER.Size = new System.Drawing.Size(132, 149);
+            this.ORDER.Size = new System.Drawing.Size(132, 152);
             this.ORDER.TabIndex = 13;
             this.ORDER.Text = "ORDER";
             this.ORDER.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -215,7 +215,7 @@
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(467, 53);
             this.search.TabIndex = 19;
-            this.search.Text = "search menu";
+            this.search.Text = "select menu";
             // 
             // LogOut
             // 
@@ -241,6 +241,10 @@
             this.MenuPanel2.Name = "MenuPanel2";
             this.MenuPanel2.Size = new System.Drawing.Size(619, 387);
             this.MenuPanel2.TabIndex = 21;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
             // drinks2
             // 
@@ -286,10 +290,6 @@
             this.myCart2.Name = "myCart2";
             this.myCart2.Size = new System.Drawing.Size(619, 387);
             this.myCart2.TabIndex = 5;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
             // Menu
             // 

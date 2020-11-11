@@ -130,6 +130,23 @@ namespace RestaurantManager
         {
 
         }
+
+        private void btnSEARCH_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("MenuItemSearchByValue", mysqlCon);
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", Search.Text);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtblMenuItem = new DataTable();
+                sqlDa.Fill(dtblMenuItem);
+                dgvMenuItem.DataSource = dtblMenuItem;
+                dgvMenuItem.Columns[0].Visible = false;
+                
+
+            }
+        }
     }
 
 }

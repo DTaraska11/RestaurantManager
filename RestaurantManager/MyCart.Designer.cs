@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderItem));
             this.ORDERFORM = new System.Windows.Forms.TextBox();
             this.dgvMenuItem = new System.Windows.Forms.DataGridView();
             this.appDataSet1 = new RestaurantManager.AppDataSet();
@@ -39,9 +40,12 @@
             this.MenuItemName = new System.Windows.Forms.TextBox();
             this.MenuItemCost = new System.Windows.Forms.TextBox();
             this.Search = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.BTNCLEAR = new System.Windows.Forms.Button();
             this.REFRESH = new System.Windows.Forms.Button();
+            this.quantity = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableAdapterManager1 = new RestaurantManager.AppDataSetTableAdapters.TableAdapterManager();
+            this.btnSEARCH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet2)).BeginInit();
@@ -88,7 +92,7 @@
             // 
             this.ADD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ADD.ForeColor = System.Drawing.Color.Fuchsia;
-            this.ADD.Location = new System.Drawing.Point(741, 185);
+            this.ADD.Location = new System.Drawing.Point(751, 327);
             this.ADD.Name = "ADD";
             this.ADD.Size = new System.Drawing.Size(118, 56);
             this.ADD.TabIndex = 3;
@@ -100,7 +104,7 @@
             // 
             this.DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DELETE.ForeColor = System.Drawing.Color.Fuchsia;
-            this.DELETE.Location = new System.Drawing.Point(1011, 185);
+            this.DELETE.Location = new System.Drawing.Point(1037, 327);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(131, 56);
             this.DELETE.TabIndex = 4;
@@ -112,7 +116,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MV Boli", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(779, 32);
+            this.label1.Location = new System.Drawing.Point(769, 137);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 28);
             this.label1.TabIndex = 7;
@@ -122,7 +126,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("MV Boli", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(789, 94);
+            this.label2.Location = new System.Drawing.Point(779, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 28);
             this.label2.TabIndex = 8;
@@ -130,7 +134,7 @@
             // 
             // MenuItemName
             // 
-            this.MenuItemName.Location = new System.Drawing.Point(883, 29);
+            this.MenuItemName.Location = new System.Drawing.Point(898, 134);
             this.MenuItemName.Name = "MenuItemName";
             this.MenuItemName.Size = new System.Drawing.Size(257, 31);
             this.MenuItemName.TabIndex = 9;
@@ -138,34 +142,24 @@
             // 
             // MenuItemCost
             // 
-            this.MenuItemCost.Location = new System.Drawing.Point(883, 91);
+            this.MenuItemCost.Location = new System.Drawing.Point(898, 191);
             this.MenuItemCost.Name = "MenuItemCost";
             this.MenuItemCost.Size = new System.Drawing.Size(257, 31);
             this.MenuItemCost.TabIndex = 10;
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(885, 292);
+            this.Search.Location = new System.Drawing.Point(195, 400);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(257, 31);
+            this.Search.Size = new System.Drawing.Size(514, 31);
             this.Search.TabIndex = 11;
             this.Search.TextChanged += new System.EventHandler(this.Search_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("MV Boli", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(757, 295);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 28);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "SEARCH";
             // 
             // BTNCLEAR
             // 
             this.BTNCLEAR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.BTNCLEAR.ForeColor = System.Drawing.Color.Fuchsia;
-            this.BTNCLEAR.Location = new System.Drawing.Point(883, 185);
+            this.BTNCLEAR.Location = new System.Drawing.Point(898, 327);
             this.BTNCLEAR.Name = "BTNCLEAR";
             this.BTNCLEAR.Size = new System.Drawing.Size(111, 56);
             this.BTNCLEAR.TabIndex = 13;
@@ -185,14 +179,54 @@
             this.REFRESH.UseVisualStyleBackColor = false;
             this.REFRESH.Click += new System.EventHandler(this.REFRESH_Click);
             // 
+            // quantity
+            // 
+            this.quantity.AutoSize = true;
+            this.quantity.Font = new System.Drawing.Font("MV Boli", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantity.Location = new System.Drawing.Point(741, 248);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(128, 28);
+            this.quantity.TabIndex = 15;
+            this.quantity.Text = "QUANTITY";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(898, 245);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(257, 31);
+            this.textBox1.TabIndex = 16;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.UpdateOrder = RestaurantManager.AppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager1.UsersTableAdapter = null;
+            // 
+            // btnSEARCH
+            // 
+            this.btnSEARCH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSEARCH.ForeColor = System.Drawing.Color.Fuchsia;
+            this.btnSEARCH.Image = ((System.Drawing.Image)(resources.GetObject("btnSEARCH.Image")));
+            this.btnSEARCH.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSEARCH.Location = new System.Drawing.Point(22, 398);
+            this.btnSEARCH.Name = "btnSEARCH";
+            this.btnSEARCH.Size = new System.Drawing.Size(167, 42);
+            this.btnSEARCH.TabIndex = 17;
+            this.btnSEARCH.Text = "   SEARCH         ";
+            this.btnSEARCH.UseVisualStyleBackColor = false;
+            this.btnSEARCH.Click += new System.EventHandler(this.btnSEARCH_Click);
+            // 
             // OrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.btnSEARCH);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.quantity);
             this.Controls.Add(this.REFRESH);
             this.Controls.Add(this.BTNCLEAR);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.MenuItemCost);
             this.Controls.Add(this.MenuItemName);
@@ -226,8 +260,11 @@
         private System.Windows.Forms.TextBox MenuItemName;
         private System.Windows.Forms.TextBox MenuItemCost;
         private System.Windows.Forms.TextBox Search;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BTNCLEAR;
         private System.Windows.Forms.Button REFRESH;
+        private System.Windows.Forms.Label quantity;
+        private System.Windows.Forms.TextBox textBox1;
+        private AppDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.Button btnSEARCH;
     }
 }

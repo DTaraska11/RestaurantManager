@@ -64,9 +64,9 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(52, 121);
+            this.button1.Location = new System.Drawing.Point(100, 122);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 239);
+            this.button1.Size = new System.Drawing.Size(169, 185);
             this.button1.TabIndex = 1;
             this.button1.Text = "coffee";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -78,9 +78,9 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(587, 122);
+            this.button2.Location = new System.Drawing.Point(599, 122);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(213, 239);
+            this.button2.Size = new System.Drawing.Size(169, 185);
             this.button2.TabIndex = 2;
             this.button2.Text = "tea";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -92,9 +92,9 @@
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(332, 121);
+            this.button3.Location = new System.Drawing.Point(352, 122);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(213, 240);
+            this.button3.Size = new System.Drawing.Size(169, 185);
             this.button3.TabIndex = 3;
             this.button3.Text = "alcohol";
             this.button3.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -106,9 +106,9 @@
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(839, 120);
+            this.button4.Location = new System.Drawing.Point(843, 122);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(213, 240);
+            this.button4.Size = new System.Drawing.Size(169, 185);
             this.button4.TabIndex = 4;
             this.button4.Text = "soda";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
