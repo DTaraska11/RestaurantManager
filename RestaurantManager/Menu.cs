@@ -131,5 +131,10 @@ namespace RestaurantManager
             dessert2.Hide();   myCart2.Show();
             myCart2.BringToFront();
         }
+
+        private void drinks2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

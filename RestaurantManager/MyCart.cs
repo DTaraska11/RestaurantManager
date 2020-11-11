@@ -20,10 +20,15 @@ namespace RestaurantManager
             InitializeComponent();
         }
 
-        private void OrderItem_Load(object sender, System.EventArgs e)
+        private void OrderItem_Load(object sender, EventArgs e)
         {
+            Refresh();
+            Update();
             Clear();
             GridFill();
+            
+
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -31,7 +36,7 @@ namespace RestaurantManager
 
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
          
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
@@ -49,7 +54,9 @@ namespace RestaurantManager
 
             }
         }
-        void GridFill()
+
+       
+        public void GridFill()
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
@@ -58,8 +65,12 @@ namespace RestaurantManager
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dtblMenuItem = new DataTable();
                 sqlDa.Fill(dtblMenuItem);
+                dgvMenuItem.DataSource = typeof(Drinks);
                 dgvMenuItem.DataSource = dtblMenuItem;
                 dgvMenuItem.Columns[0].Visible = false;
+                dgvMenuItem.Update();
+                dgvMenuItem.Refresh();
+
             }
         }
 
@@ -77,7 +88,7 @@ namespace RestaurantManager
 
         }
 
-        private void button2_Click(object sender, System.EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
@@ -93,10 +104,9 @@ namespace RestaurantManager
             }
         }
 
-        private void dgvMenuItem_DoubleClick(object sender, System.EventArgs e)
+        private void dgvMenuItem_DoubleClick(object sender, EventArgs e)
         {
-            if (dgvMenuItem.CurrentRow.Index != -1)
-            {
+            if (dgvMenuItem.CurrentRow.Index != -1){
                 MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
                 MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
                 MenuItemID = Convert.ToInt32(dgvMenuItem.CurrentRow.Cells[0].Value.ToString());
@@ -109,6 +119,16 @@ namespace RestaurantManager
         private void button1_Click_2(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void REFRESH_Click(object sender, EventArgs e)
+        {
+            GridFill();
+        }
+
+        private void MenuItemName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

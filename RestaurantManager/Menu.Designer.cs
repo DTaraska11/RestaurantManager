@@ -250,6 +250,7 @@
             this.drinks2.Name = "drinks2";
             this.drinks2.Size = new System.Drawing.Size(619, 387);
             this.drinks2.TabIndex = 0;
+            this.drinks2.Load += new System.EventHandler(this.drinks2_Load);
             // 
             // dessert2
             // 
