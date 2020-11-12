@@ -43,7 +43,7 @@
             this.BTNCLEAR = new System.Windows.Forms.Button();
             this.REFRESH = new System.Windows.Forms.Button();
             this.quantity = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.D = new System.Windows.Forms.TextBox();
             this.tableAdapterManager1 = new RestaurantManager.AppDataSetTableAdapters.TableAdapterManager();
             this.btnSEARCH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).BeginInit();
@@ -71,6 +71,7 @@
             this.dgvMenuItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenuItem.Location = new System.Drawing.Point(19, 128);
             this.dgvMenuItem.Name = "dgvMenuItem";
+            this.dgvMenuItem.ReadOnly = true;
             this.dgvMenuItem.RowHeadersWidth = 82;
             this.dgvMenuItem.RowTemplate.Height = 33;
             this.dgvMenuItem.Size = new System.Drawing.Size(692, 255);
@@ -183,18 +184,19 @@
             // 
             this.quantity.AutoSize = true;
             this.quantity.Font = new System.Drawing.Font("MV Boli", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity.Location = new System.Drawing.Point(741, 248);
+            this.quantity.Location = new System.Drawing.Point(729, 248);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(128, 28);
+            this.quantity.Size = new System.Drawing.Size(163, 28);
             this.quantity.TabIndex = 15;
-            this.quantity.Text = "QUANTITY";
+            this.quantity.Text = "DESCRIPTION";
+            this.quantity.Click += new System.EventHandler(this.quantity_Click);
             // 
-            // textBox1
+            // D
             // 
-            this.textBox1.Location = new System.Drawing.Point(898, 245);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 31);
-            this.textBox1.TabIndex = 16;
+            this.D.Location = new System.Drawing.Point(898, 245);
+            this.D.Name = "D";
+            this.D.Size = new System.Drawing.Size(257, 31);
+            this.D.TabIndex = 16;
             // 
             // tableAdapterManager1
             // 
@@ -223,7 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.btnSEARCH);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.D);
             this.Controls.Add(this.quantity);
             this.Controls.Add(this.REFRESH);
             this.Controls.Add(this.BTNCLEAR);
@@ -263,7 +265,7 @@
         private System.Windows.Forms.Button BTNCLEAR;
         private System.Windows.Forms.Button REFRESH;
         private System.Windows.Forms.Label quantity;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox D;
         private AppDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.Button btnSEARCH;
     }

@@ -40,13 +40,23 @@ namespace RestaurantManager
         {
          
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-            {
-                mysqlCon.Open();
+            {   mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
+                
+                //if (ADD.Text == "Save")
+      
+                
                 mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_Description", D.Text.Trim());
+
+                //if(ADD.Text == "EDIT")
+
+
+
+
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
                 Clear();
@@ -77,7 +87,7 @@ namespace RestaurantManager
 
         void Clear()
         {
-            MenuItemName.Text  = MenuItemCost.Text = "";
+            MenuItemName.Text= D.Text  = MenuItemCost.Text = "";
             MenuItemID = 0;
             ADD.Text = "Save";
             DELETE.Enabled = false;
@@ -109,8 +119,9 @@ namespace RestaurantManager
             if (dgvMenuItem.CurrentRow.Index != -1){
                 MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
                 MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
+                D.Text = dgvMenuItem.CurrentRow.Cells[3].Value.ToString();
                 MenuItemID = Convert.ToInt32(dgvMenuItem.CurrentRow.Cells[0].Value.ToString());
-                ADD.Text = "UPDATE";
+                ADD.Text = "EDIT";
                 DELETE.Enabled = Enabled;
             }
         }
@@ -146,6 +157,11 @@ namespace RestaurantManager
                 
 
             }
+        }
+
+        private void quantity_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
