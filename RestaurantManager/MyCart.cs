@@ -200,6 +200,21 @@ namespace RestaurantManager
 
 
         }
+
+        private void Total_Click(object sender, EventArgs e)
+        {
+            int sum = 0;
+            for (int i=0; i< dgvMenuItem.Rows.Count; i++)
+            {
+
+                sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
+            }
+            
+
+            MessageBox.Show("Total $"+ sum.ToString());
+        }
+
+
     }
 
 }
