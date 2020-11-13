@@ -117,7 +117,7 @@ namespace RestaurantManager
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemDeleteByID", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.Parameters.AddWithValue("MenuItemID", MenuItemID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted Successfully");
                 Clear();
@@ -214,7 +214,26 @@ namespace RestaurantManager
             MessageBox.Show("Total $"+ sum.ToString());
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("MenuItemDeleteALLByID", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+                Clear();
+                GridFill();
 
+            }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

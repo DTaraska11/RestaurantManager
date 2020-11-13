@@ -47,6 +47,8 @@
             this.tableAdapterManager1 = new RestaurantManager.AppDataSetTableAdapters.TableAdapterManager();
             this.btnSEARCH = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.Button();
+            this.STARTOVER = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet2)).BeginInit();
@@ -232,11 +234,37 @@
             this.Total.UseVisualStyleBackColor = false;
             this.Total.Click += new System.EventHandler(this.Total_Click);
             // 
+            // STARTOVER
+            // 
+            this.STARTOVER.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.STARTOVER.ForeColor = System.Drawing.Color.Fuchsia;
+            this.STARTOVER.Location = new System.Drawing.Point(751, 3);
+            this.STARTOVER.Name = "STARTOVER";
+            this.STARTOVER.Size = new System.Drawing.Size(211, 48);
+            this.STARTOVER.TabIndex = 19;
+            this.STARTOVER.Text = "START OVER";
+            this.STARTOVER.UseVisualStyleBackColor = false;
+            this.STARTOVER.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.button1.Location = new System.Drawing.Point(972, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 48);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "FINISH ORDER";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
             // OrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.STARTOVER);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.btnSEARCH);
             this.Controls.Add(this.D);
@@ -253,7 +281,7 @@
             this.Controls.Add(this.dgvMenuItem);
             this.Controls.Add(this.ORDERFORM);
             this.Name = "OrderItem";
-            this.Size = new System.Drawing.Size(1203, 469);
+            this.Size = new System.Drawing.Size(1203, 589);
             this.Load += new System.EventHandler(this.OrderItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).EndInit();
@@ -283,5 +311,7 @@
         private AppDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.Button btnSEARCH;
         private System.Windows.Forms.Button Total;
+        private System.Windows.Forms.Button STARTOVER;
+        private System.Windows.Forms.Button button1;
     }
 }
