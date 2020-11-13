@@ -40,13 +40,35 @@ namespace RestaurantManager
         {
          
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-            {
-                mysqlCon.Open();
+            {   mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
-                mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
+
+                //if (ADD.Text == "Save")
+
+                //{
+                    mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                    mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_Description", D.Text.Trim());
+                //}
+
+                //if (ADD.Text == "EDIT")
+
+               // {
+                    //mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                    // mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
+                    // mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
+                    // mySqlCmd.Parameters.AddWithValue("_Description", D.Text.Trim());
+
+                   // DataGridViewRow newDataRow = dgvMenuItem.CurrentRow;
+                    //newDataRow.Cells[0].Value = MenuItemID;
+                   // newDataRow.Cells[1].Value = MenuItemName.Text;
+                   // newDataRow.Cells[2].Value = MenuItemCost.Text;
+                   // newDataRow.Cells[3].Value = D.Text;
+
+               // }
+
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
                 Clear();
@@ -77,7 +99,7 @@ namespace RestaurantManager
 
         void Clear()
         {
-            MenuItemName.Text  = MenuItemCost.Text = "";
+            MenuItemName.Text= D.Text  = MenuItemCost.Text = "";
             MenuItemID = 0;
             ADD.Text = "Save";
             DELETE.Enabled = false;
@@ -95,7 +117,7 @@ namespace RestaurantManager
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemDeleteByID", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.Parameters.AddWithValue("MenuItemID", MenuItemID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted Successfully");
                 Clear();
@@ -107,10 +129,14 @@ namespace RestaurantManager
         private void dgvMenuItem_DoubleClick(object sender, EventArgs e)
         {
             if (dgvMenuItem.CurrentRow.Index != -1){
+
+                
+
                 MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
                 MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
+                D.Text = dgvMenuItem.CurrentRow.Cells[3].Value.ToString();
                 MenuItemID = Convert.ToInt32(dgvMenuItem.CurrentRow.Cells[0].Value.ToString());
-                ADD.Text = "UPDATE";
+                ADD.Text = "EDIT";
                 DELETE.Enabled = Enabled;
             }
         }
@@ -146,6 +172,67 @@ namespace RestaurantManager
                 
 
             }
+        }
+
+        private void quantity_Click(object sender, EventArgs e)
+        {
+
+        }
+        
+        
+        //updates data grid view not database
+        private void update_Click_1(object sender, EventArgs e)
+        {
+            
+
+                
+                
+
+                DataGridViewRow newDataRow = dgvMenuItem.CurrentRow;
+                newDataRow.Cells[0].Value = MenuItemID;
+                newDataRow.Cells[1].Value = MenuItemName.Text;
+                newDataRow.Cells[2].Value = MenuItemCost.Text;
+                newDataRow.Cells[3].Value = D.Text;
+
+                
+
+            
+
+
+        }
+
+        private void Total_Click(object sender, EventArgs e)
+        {
+            int sum = 0;
+            for (int i=0; i< dgvMenuItem.Rows.Count; i++)
+            {
+
+                sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
+            }
+            
+
+            MessageBox.Show("Total $"+ sum.ToString());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("MenuItemDeleteALLByID", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+                Clear();
+                GridFill();
+
+            }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
         }
     }
 
