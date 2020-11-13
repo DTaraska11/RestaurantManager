@@ -105,7 +105,7 @@
             // 
             this.DELETE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.DELETE.ForeColor = System.Drawing.Color.Fuchsia;
-            this.DELETE.Location = new System.Drawing.Point(1037, 327);
+            this.DELETE.Location = new System.Drawing.Point(1024, 327);
             this.DELETE.Name = "DELETE";
             this.DELETE.Size = new System.Drawing.Size(131, 56);
             this.DELETE.TabIndex = 4;
