@@ -75,6 +75,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="2DMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="2DMain.Designer.cs">
+      <DependentUpon>2DMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dessert.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,12 @@
     </Compile>
     <Compile Include="Drinks.Designer.cs">
       <DependentUpon>Drinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FloorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FloorInfo.Designer.cs">
+      <DependentUpon>FloorInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Food.cs">
       <SubType>UserControl</SubType>
@@ -137,6 +149,12 @@
     </Compile>
     <Compile Include="MySQLConnection.cs" />
     <Compile Include="MySQLConnection1.cs" />
+    <Compile Include="OrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderInfo.Designer.cs">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Snacks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,11 +196,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="2DMain.resx">
+      <DependentUpon>2DMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dessert.resx">
       <DependentUpon>Dessert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drinks.resx">
       <DependentUpon>Drinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FloorInfo.resx">
+      <DependentUpon>FloorInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Food.resx">
       <DependentUpon>Food.cs</DependentUpon>
@@ -204,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyCart.resx">
       <DependentUpon>MyCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderInfo.resx">
+      <DependentUpon>OrderInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Snacks.resx">
       <DependentUpon>Snacks.cs</DependentUpon>
