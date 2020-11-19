@@ -232,6 +232,45 @@ namespace RestaurantManager
 
         private void button1_Click_3(object sender, EventArgs e)
         {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Order Complete");
+                OrderGridFill();
+
+
+            }
+        }
+
+
+
+
+        public void OrderGridFill()
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("FinishOrderViewAll", mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+               
+                DataTable dtblFinishOrder = new DataTable();
+                sqlDa.Fill(dtblFinishOrder);
+
+                dgvFinishOrder.DataSource = dtblFinishOrder;
+                dgvFinishOrder.Columns[0].Visible = true;
+                dgvFinishOrder.Update();
+                dgvFinishOrder.Refresh();
+
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
