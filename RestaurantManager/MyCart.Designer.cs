@@ -50,10 +50,11 @@
             this.STARTOVER = new System.Windows.Forms.Button();
             this.FINISHORDER = new System.Windows.Forms.Button();
             this.dgvFinishOrder = new System.Windows.Forms.DataGridView();
-            this.deleteOrder = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.deleteOrder = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet2)).BeginInit();
@@ -65,7 +66,7 @@
             this.ORDERFORM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ORDERFORM.Font = new System.Drawing.Font("MV Boli", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ORDERFORM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ORDERFORM.Location = new System.Drawing.Point(19, 60);
+            this.ORDERFORM.Location = new System.Drawing.Point(22, 36);
             this.ORDERFORM.Name = "ORDERFORM";
             this.ORDERFORM.Size = new System.Drawing.Size(330, 67);
             this.ORDERFORM.TabIndex = 0;
@@ -78,7 +79,7 @@
             this.dgvMenuItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMenuItem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dgvMenuItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenuItem.Location = new System.Drawing.Point(19, 128);
+            this.dgvMenuItem.Location = new System.Drawing.Point(19, 109);
             this.dgvMenuItem.Name = "dgvMenuItem";
             this.dgvMenuItem.ReadOnly = true;
             this.dgvMenuItem.RowHeadersWidth = 82;
@@ -146,7 +147,7 @@
             // 
             this.MenuItemName.Location = new System.Drawing.Point(908, 136);
             this.MenuItemName.Name = "MenuItemName";
-            this.MenuItemName.Size = new System.Drawing.Size(257, 31);
+            this.MenuItemName.Size = new System.Drawing.Size(273, 31);
             this.MenuItemName.TabIndex = 9;
             this.MenuItemName.TextChanged += new System.EventHandler(this.MenuItemName_TextChanged);
             // 
@@ -154,12 +155,12 @@
             // 
             this.MenuItemCost.Location = new System.Drawing.Point(908, 191);
             this.MenuItemCost.Name = "MenuItemCost";
-            this.MenuItemCost.Size = new System.Drawing.Size(257, 31);
+            this.MenuItemCost.Size = new System.Drawing.Size(273, 31);
             this.MenuItemCost.TabIndex = 10;
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(191, 426);
+            this.Search.Location = new System.Drawing.Point(189, 398);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(519, 31);
             this.Search.TabIndex = 11;
@@ -181,9 +182,9 @@
             // 
             this.REFRESH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.REFRESH.ForeColor = System.Drawing.Color.Fuchsia;
-            this.REFRESH.Location = new System.Drawing.Point(22, 130);
+            this.REFRESH.Location = new System.Drawing.Point(18, 109);
             this.REFRESH.Name = "REFRESH";
-            this.REFRESH.Size = new System.Drawing.Size(164, 42);
+            this.REFRESH.Size = new System.Drawing.Size(178, 42);
             this.REFRESH.TabIndex = 14;
             this.REFRESH.Text = "REFRESH";
             this.REFRESH.UseVisualStyleBackColor = false;
@@ -204,7 +205,7 @@
             // 
             this.D.Location = new System.Drawing.Point(908, 245);
             this.D.Name = "D";
-            this.D.Size = new System.Drawing.Size(257, 31);
+            this.D.Size = new System.Drawing.Size(275, 31);
             this.D.TabIndex = 16;
             // 
             // tableAdapterManager1
@@ -220,9 +221,9 @@
             this.btnSEARCH.ForeColor = System.Drawing.Color.Fuchsia;
             this.btnSEARCH.Image = ((System.Drawing.Image)(resources.GetObject("btnSEARCH.Image")));
             this.btnSEARCH.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSEARCH.Location = new System.Drawing.Point(19, 421);
+            this.btnSEARCH.Location = new System.Drawing.Point(18, 399);
             this.btnSEARCH.Name = "btnSEARCH";
-            this.btnSEARCH.Size = new System.Drawing.Size(167, 42);
+            this.btnSEARCH.Size = new System.Drawing.Size(178, 42);
             this.btnSEARCH.TabIndex = 17;
             this.btnSEARCH.Text = "   SEARCH         ";
             this.btnSEARCH.UseVisualStyleBackColor = false;
@@ -262,7 +263,7 @@
             this.FINISHORDER.TabIndex = 20;
             this.FINISHORDER.Text = "FINISH ORDER";
             this.FINISHORDER.UseVisualStyleBackColor = false;
-            this.FINISHORDER.Click += new System.EventHandler(this.button1_Click_3);
+            this.FINISHORDER.Click += new System.EventHandler(this.FINISHORDER_Click);
             // 
             // dgvFinishOrder
             // 
@@ -271,66 +272,79 @@
             this.dgvFinishOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFinishOrder.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvFinishOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFinishOrder.Location = new System.Drawing.Point(19, 521);
+            this.dgvFinishOrder.Location = new System.Drawing.Point(19, 552);
             this.dgvFinishOrder.Name = "dgvFinishOrder";
             this.dgvFinishOrder.ReadOnly = true;
             this.dgvFinishOrder.RowHeadersWidth = 82;
             this.dgvFinishOrder.RowTemplate.Height = 33;
-            this.dgvFinishOrder.Size = new System.Drawing.Size(898, 155);
+            this.dgvFinishOrder.Size = new System.Drawing.Size(1164, 155);
             this.dgvFinishOrder.TabIndex = 21;
+            this.dgvFinishOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvFinishOrder.DoubleClick += new System.EventHandler(this.dgvFinishOrder_DoubleClick);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(884, 516);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(297, 31);
+            this.textBox2.TabIndex = 25;
             // 
             // deleteOrder
             // 
             this.deleteOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.deleteOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.deleteOrder.Location = new System.Drawing.Point(943, 616);
+            this.deleteOrder.ForeColor = System.Drawing.Color.Fuchsia;
+            this.deleteOrder.Location = new System.Drawing.Point(580, 509);
             this.deleteOrder.Name = "deleteOrder";
-            this.deleteOrder.Size = new System.Drawing.Size(240, 60);
-            this.deleteOrder.TabIndex = 23;
-            this.deleteOrder.Text = "delete";
+            this.deleteOrder.Size = new System.Drawing.Size(131, 43);
+            this.deleteOrder.TabIndex = 27;
+            this.deleteOrder.Text = "DELETE";
             this.deleteOrder.UseVisualStyleBackColor = false;
+            this.deleteOrder.Click += new System.EventHandler(this.deleteOrder_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.textBox1.Font = new System.Drawing.Font("MV Boli", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.textBox1.Location = new System.Drawing.Point(18, 479);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(433, 67);
+            this.textBox1.TabIndex = 28;
+            this.textBox1.Text = "COMPLETED ORDERS";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button2.ForeColor = System.Drawing.Color.Fuchsia;
+            this.button2.Location = new System.Drawing.Point(485, 509);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 43);
+            this.button2.TabIndex = 29;
+            this.button2.Text = "TIP";
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.Location = new System.Drawing.Point(19, 682);
+            this.button1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.button1.Location = new System.Drawing.Point(749, 509);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 42);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "      search         ";
+            this.button1.Size = new System.Drawing.Size(131, 43);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "SEARCH";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(191, 682);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(723, 31);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.textBox3.Font = new System.Drawing.Font("MV Boli", 13.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox3.Location = new System.Drawing.Point(943, 521);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(240, 67);
-            this.textBox3.TabIndex = 26;
-            this.textBox3.Text = " All Orders";
             // 
             // OrderItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.deleteOrder);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvFinishOrder);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.deleteOrder);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.FINISHORDER);
             this.Controls.Add(this.STARTOVER);
             this.Controls.Add(this.Total);
@@ -383,9 +397,10 @@
         private System.Windows.Forms.Button STARTOVER;
         private System.Windows.Forms.Button FINISHORDER;
         private System.Windows.Forms.DataGridView dgvFinishOrder;
-        private System.Windows.Forms.Button deleteOrder;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button deleteOrder;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

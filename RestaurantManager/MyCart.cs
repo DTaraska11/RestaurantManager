@@ -15,6 +15,7 @@ namespace RestaurantManager
     {
         string connectionString = "server=98.115.187.178;port=9005;user=root;password=root;database=Restaurant;";
         int MenuItemID = 0;
+       
         public OrderItem()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace RestaurantManager
             Update();
             Clear();
             GridFill();
+            FinishOrderGridFill();
             
 
             
@@ -109,7 +111,7 @@ namespace RestaurantManager
         {
 
         }
-
+        //delete button menu items
         private void button2_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
@@ -179,41 +181,26 @@ namespace RestaurantManager
 
         }
         
-        
-        //updates data grid view not database
-        private void update_Click_1(object sender, EventArgs e)
+       private void GetSum(object sender, EventArgs e)
         {
-            
-
-                
-                
-
-                DataGridViewRow newDataRow = dgvMenuItem.CurrentRow;
-                newDataRow.Cells[0].Value = MenuItemID;
-                newDataRow.Cells[1].Value = MenuItemName.Text;
-                newDataRow.Cells[2].Value = MenuItemCost.Text;
-                newDataRow.Cells[3].Value = D.Text;
-
-                
-
-            
-
+          
 
         }
 
         private void Total_Click(object sender, EventArgs e)
         {
+
             int sum = 0;
-            for (int i=0; i< dgvMenuItem.Rows.Count; i++)
+            for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
             {
 
                 sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
             }
-            
 
             MessageBox.Show("Total $"+ sum.ToString());
         }
 
+        //delete all menu items
         private void button1_Click_1(object sender, EventArgs e)
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
@@ -230,27 +217,11 @@ namespace RestaurantManager
             }
         }
 
-        private void button1_Click_3(object sender, EventArgs e)
-        {
-            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-            {
-                mysqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
+      
+       
 
 
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Order Complete");
-                OrderGridFill();
-
-
-            }
-        }
-
-
-
-
-        public void OrderGridFill()
+        public void FinishOrderGridFill()
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
@@ -269,10 +240,53 @@ namespace RestaurantManager
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+      
+
+        private void FINISHORDER_Click(object sender, EventArgs e)
         {
 
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+
+
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Order Complete");
+                FinishOrderGridFill();
+
+
+            }
         }
+       
+     
+
+
+        private void dgvFinishOrder_DoubleClick(object sender, EventArgs e)
+        {
+            
+               
+            
+        }
+
+        private void deleteOrder_Click_1(object sender, EventArgs e)
+        {
+            int FinishOrderID = 0;
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrderDeleteByID", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("FinishOrderID", FinishOrderID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted Successfully");
+  
+                FinishOrderGridFill();
+
+            }
+        }
+
     }
 
 }
