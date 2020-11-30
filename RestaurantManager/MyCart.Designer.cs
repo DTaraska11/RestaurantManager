@@ -322,6 +322,7 @@
             this.button2.TabIndex = 29;
             this.button2.Text = "TIP";
             this.button2.UseVisualStyleBackColor = false;
+           // this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // button1
             // 

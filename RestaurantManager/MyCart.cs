@@ -45,32 +45,6 @@ namespace RestaurantManager
             {   mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-
-                //if (ADD.Text == "Save")
-
-                //{
-                    mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
-                    mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_Description", D.Text.Trim());
-                //}
-
-                //if (ADD.Text == "EDIT")
-
-               // {
-                    //mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
-                    // mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text.Trim());
-                    // mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text.Trim());
-                    // mySqlCmd.Parameters.AddWithValue("_Description", D.Text.Trim());
-
-                   // DataGridViewRow newDataRow = dgvMenuItem.CurrentRow;
-                    //newDataRow.Cells[0].Value = MenuItemID;
-                   // newDataRow.Cells[1].Value = MenuItemName.Text;
-                   // newDataRow.Cells[2].Value = MenuItemCost.Text;
-                   // newDataRow.Cells[3].Value = D.Text;
-
-               // }
-
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
                 Clear();
@@ -127,7 +101,7 @@ namespace RestaurantManager
 
             }
         }
-
+        //click in menu item datagv table
         private void dgvMenuItem_DoubleClick(object sender, EventArgs e)
         {
             if (dgvMenuItem.CurrentRow.Index != -1){
@@ -181,16 +155,16 @@ namespace RestaurantManager
 
         }
         
-       private void GetSum(object sender, EventArgs e)
+       public int GetSum(int sum)
         {
-          
 
+            return (sum);
         }
-
+       
         private void Total_Click(object sender, EventArgs e)
         {
-
-            int sum = 0;
+             int sum = 0;
+            
             for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
             {
 
@@ -198,7 +172,9 @@ namespace RestaurantManager
             }
 
             MessageBox.Show("Total $"+ sum.ToString());
+            GetSum(sum);
         }
+        
 
         //delete all menu items
         private void button1_Click_1(object sender, EventArgs e)
@@ -242,23 +218,6 @@ namespace RestaurantManager
 
       
 
-        private void FINISHORDER_Click(object sender, EventArgs e)
-        {
-
-            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-            {
-                mysqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-
-
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Order Complete");
-                FinishOrderGridFill();
-
-
-            }
-        }
        
      
 
@@ -287,6 +246,45 @@ namespace RestaurantManager
             }
         }
 
+      
+
+       
+
+        private void FINISHORDER_Click(object sender, EventArgs e)
+        {       
+                int sum = 0;
+                for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
+                {
+
+                    sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
+                }
+
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
+                mySqlCmd.Parameters.AddWithValue("_sum", sum);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Order Complete");
+               
+                
+
+               
+
+                
+                FinishOrderGridFill();
+                
+       
+
+            }
+
+
+
+
+        }
+
+      
     }
 
 }
