@@ -15,7 +15,7 @@ namespace RestaurantManager
     {
         string connectionString = "server=98.115.187.178;port=9005;user=root;password=root;database=Restaurant;";
         int MenuItemID = 0;
-       
+
         public OrderItem()
         {
             InitializeComponent();
@@ -28,9 +28,9 @@ namespace RestaurantManager
             Clear();
             GridFill();
             FinishOrderGridFill();
-            
 
-            
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,9 +40,10 @@ namespace RestaurantManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
-            {   mysqlCon.Open();
+            {
+                mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
                 mySqlCmd.ExecuteNonQuery();
@@ -53,7 +54,7 @@ namespace RestaurantManager
             }
         }
 
-       
+
         public void GridFill()
         {
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
@@ -75,7 +76,7 @@ namespace RestaurantManager
 
         void Clear()
         {
-            MenuItemName.Text= D.Text  = MenuItemCost.Text = "";
+            MenuItemName.Text = D.Text = MenuItemCost.Text = "";
             MenuItemID = 0;
             ADD.Text = "Save";
             DELETE.Enabled = false;
@@ -104,9 +105,10 @@ namespace RestaurantManager
         //click in menu item datagv table
         private void dgvMenuItem_DoubleClick(object sender, EventArgs e)
         {
-            if (dgvMenuItem.CurrentRow.Index != -1){
+            if (dgvMenuItem.CurrentRow.Index != -1)
+            {
 
-                
+
 
                 MenuItemName.Text = dgvMenuItem.CurrentRow.Cells[1].Value.ToString();
                 MenuItemCost.Text = dgvMenuItem.CurrentRow.Cells[2].Value.ToString();
@@ -117,7 +119,7 @@ namespace RestaurantManager
             }
         }
 
-       
+
         private void button1_Click_2(object sender, EventArgs e)
         {
             Clear();
@@ -145,7 +147,7 @@ namespace RestaurantManager
                 sqlDa.Fill(dtblMenuItem);
                 dgvMenuItem.DataSource = dtblMenuItem;
                 dgvMenuItem.Columns[0].Visible = false;
-                
+
 
             }
         }
@@ -154,27 +156,27 @@ namespace RestaurantManager
         {
 
         }
-        
-       public int GetSum(int sum)
+
+        public int GetSum(int sum)
         {
 
             return (sum);
         }
-       
+
         private void Total_Click(object sender, EventArgs e)
         {
-             int sum = 0;
-            
+            int sum = 0;
+
             for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
             {
 
                 sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
             }
 
-            MessageBox.Show("Total $"+ sum.ToString());
+            MessageBox.Show("Total $" + sum.ToString());
             GetSum(sum);
         }
-        
+
 
         //delete all menu items
         private void button1_Click_1(object sender, EventArgs e)
@@ -193,8 +195,8 @@ namespace RestaurantManager
             }
         }
 
-      
-       
+
+
 
 
         public void FinishOrderGridFill()
@@ -204,7 +206,7 @@ namespace RestaurantManager
                 mysqlCon.Open();
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter("FinishOrderViewAll", mysqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-               
+
                 DataTable dtblFinishOrder = new DataTable();
                 sqlDa.Fill(dtblFinishOrder);
 
@@ -216,17 +218,17 @@ namespace RestaurantManager
             }
         }
 
-      
 
-       
-     
+
+
+
 
 
         private void dgvFinishOrder_DoubleClick(object sender, EventArgs e)
         {
-            
-               
-            
+
+
+
         }
 
         private void deleteOrder_Click_1(object sender, EventArgs e)
@@ -240,51 +242,71 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("FinishOrderID", FinishOrderID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted Successfully");
-  
+
                 FinishOrderGridFill();
 
             }
         }
 
-      
 
-       
+
 
         private void FINISHORDER_Click(object sender, EventArgs e)
-        {       
-                int sum = 0;
-                for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
-                {
+        {
+            //for the subtotal column
+            int sum = 0;
+            for (int i = 0; i < dgvMenuItem.Rows.Count; i++)
+            {
 
-                    sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
-                }
+                sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
+            }
+
+            //for the tip column
+            double tip = .15 * sum;
+            //for the tip column
+            double total = tip + sum;
+
+
+
+
+
+
 
             using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
             {
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("FinishOrder", mysqlCon);
                 mySqlCmd.Parameters.AddWithValue("_sum", sum);
+                mySqlCmd.Parameters.AddWithValue("_tip", tip);
+                mySqlCmd.Parameters.AddWithValue("_total", total);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Order Complete");
-               
-                
 
-               
 
-                
+
+
+
+
                 FinishOrderGridFill();
-                
-       
+
+
 
             }
 
-
-
-
         }
 
-      
-    }
+        private void totalVal_Click_1(object sender, EventArgs e)
+        {
+            int sum = 0;
 
+            for (int i = 0; i < dgvFinishOrder.Rows.Count; i++)
+            {
+
+                sum += Convert.ToInt32(dgvFinishOrder.Rows[i].Cells[2].Value);
+            }
+
+            MessageBox.Show("Total Value $" + sum.ToString());
+        }
+    }
 }

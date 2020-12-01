@@ -53,7 +53,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.deleteOrder = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.totalVal = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenuItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appDataSet1)).BeginInit();
@@ -312,17 +312,17 @@
             this.textBox1.TabIndex = 28;
             this.textBox1.Text = "COMPLETED ORDERS";
             // 
-            // button2
+            // totalVal
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.button2.Location = new System.Drawing.Point(485, 509);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 43);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "TIP";
-            this.button2.UseVisualStyleBackColor = false;
-           // this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.totalVal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.totalVal.ForeColor = System.Drawing.Color.Fuchsia;
+            this.totalVal.Location = new System.Drawing.Point(457, 509);
+            this.totalVal.Name = "totalVal";
+            this.totalVal.Size = new System.Drawing.Size(117, 43);
+            this.totalVal.TabIndex = 29;
+            this.totalVal.Text = "TOTAL$";
+            this.totalVal.UseVisualStyleBackColor = false;
+            this.totalVal.Click += new System.EventHandler(this.totalVal_Click_1);
             // 
             // button1
             // 
@@ -341,7 +341,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.totalVal);
             this.Controls.Add(this.dgvFinishOrder);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.deleteOrder);
@@ -401,7 +401,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button deleteOrder;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button totalVal;
         private System.Windows.Forms.Button button1;
     }
 }
