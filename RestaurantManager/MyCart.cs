@@ -45,6 +45,10 @@ namespace RestaurantManager
             {
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
+                mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
+                mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName.Text);
+                mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost.Text);
+                mySqlCmd.Parameters.AddWithValue("_Description", D.Text);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submitted Successfully");
@@ -307,6 +311,23 @@ namespace RestaurantManager
             }
 
             MessageBox.Show("Total Value $" + sum.ToString());
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("FinishOrderSearch", mysqlCon);
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", Search.Text);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtblMenuItem = new DataTable();
+                sqlDa.Fill(dtblMenuItem);
+                dgvFinishOrder.DataSource = dtblMenuItem;
+                dgvFinishOrder.Columns[0].Visible = false;
+
+
+            }
         }
     }
 }
