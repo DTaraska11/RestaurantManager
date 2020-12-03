@@ -261,7 +261,7 @@ namespace RestaurantManager
                 sum += Convert.ToInt32(dgvMenuItem.Rows[i].Cells[2].Value);
             }
 
-            //for the tip column
+            //for the tip column apply 15% tip 
             double tip = .15 * sum;
             //for the tip column
             double total = tip + sum;
@@ -303,7 +303,7 @@ namespace RestaurantManager
             for (int i = 0; i < dgvFinishOrder.Rows.Count; i++)
             {
 
-                sum += Convert.ToInt32(dgvFinishOrder.Rows[i].Cells[2].Value);
+                sum += Convert.ToInt32(dgvFinishOrder.Rows[i].Cells[4].Value);
             }
 
             MessageBox.Show("Total Value $" + sum.ToString());
