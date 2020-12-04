@@ -111,6 +111,9 @@ namespace RestaurantManager
                 mySqlCommand2.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
                 mySqlCommand2.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID + 1;
                 mySqlCommand2.Parameters.Add("@email", MySqlDbType.VarChar).Value = txtEmail.Text;
+                mySqlCommand2.Parameters.Add("@address", MySqlDbType.VarChar).Value = textBox_Address.Text;
+                mySqlCommand2.Parameters.Add("@phone", MySqlDbType.VarChar).Value = textBox_Phone.Text;
+
                 if (comboBox1.SelectedItem.Equals("Owner"))
                 {
                     mySqlCommand2.Parameters.Add("@parent", MySqlDbType.Int32).Value = 0;
@@ -300,6 +303,11 @@ namespace RestaurantManager
             }
             User newUser = new User();
             */
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

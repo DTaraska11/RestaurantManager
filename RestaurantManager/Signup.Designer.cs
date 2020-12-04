@@ -32,6 +32,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.butSignUp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_Phone = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox_Address = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.textBox_FirstName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox_LastName = new System.Windows.Forms.TextBox();
@@ -48,10 +52,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.labMsg = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox_Address = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox_Phone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +110,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 288);
             this.panel1.TabIndex = 12;
+            // 
+            // textBox_Phone
+            // 
+            this.textBox_Phone.Location = new System.Drawing.Point(125, 166);
+            this.textBox_Phone.Name = "textBox_Phone";
+            this.textBox_Phone.Size = new System.Drawing.Size(101, 20);
+            this.textBox_Phone.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("NSimSun", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Crimson;
+            this.label9.Location = new System.Drawing.Point(56, 171);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 11);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Phone:";
+            // 
+            // textBox_Address
+            // 
+            this.textBox_Address.Location = new System.Drawing.Point(125, 140);
+            this.textBox_Address.Name = "textBox_Address";
+            this.textBox_Address.Size = new System.Drawing.Size(101, 20);
+            this.textBox_Address.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("NSimSun", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Crimson;
+            this.label8.Location = new System.Drawing.Point(9, 143);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 11);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Street Address:";
             // 
             // textBox_FirstName
             // 
@@ -197,7 +233,6 @@
             this.label5.Size = new System.Drawing.Size(75, 11);
             this.label5.TabIndex = 9;
             this.label5.Text = "Username: ";
-            
             // 
             // txtConfirmPass
             // 
@@ -278,42 +313,6 @@
             this.linkLabel1.Text = "Have An Account? Click Here";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("NSimSun", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Crimson;
-            this.label8.Location = new System.Drawing.Point(9, 143);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 11);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Street Address:";
-            // 
-            // textBox_Address
-            // 
-            this.textBox_Address.Location = new System.Drawing.Point(125, 140);
-            this.textBox_Address.Name = "textBox_Address";
-            this.textBox_Address.Size = new System.Drawing.Size(101, 20);
-            this.textBox_Address.TabIndex = 18;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("NSimSun", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Crimson;
-            this.label9.Location = new System.Drawing.Point(56, 171);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 11);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Phone:";
-            // 
-            // textBox_Phone
-            // 
-            this.textBox_Phone.Location = new System.Drawing.Point(125, 166);
-            this.textBox_Phone.Name = "textBox_Phone";
-            this.textBox_Phone.Size = new System.Drawing.Size(101, 20);
-            this.textBox_Phone.TabIndex = 20;
-            // 
             // Signup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,7 +328,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Signup";
             this.Text = "Form3";
-            
+            this.Load += new System.EventHandler(this.Signup_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
