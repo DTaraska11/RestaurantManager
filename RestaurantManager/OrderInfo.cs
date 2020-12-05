@@ -22,7 +22,7 @@ namespace RestaurantManager
         {
             MySQLConnection db = new MySQLConnection();
             db.OpenConn();
-            String cmmd = "SELECT `order`.`order_id`,`order`.`food_items`,`order`.`quantity`,`order`.`order_total`,`order`.`customer_id`,`order`.`oreder_status`,`order`.`order_type`FROM `Restaurant`.`order`; ";
+            String cmmd = "SELECT * FROM `Restaurant`.`order_table`; ";
             MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmmd, db.getConnection());
             DataSet ds = new DataSet();
             dataAdapter.Fill(ds, "order");
