@@ -58,9 +58,9 @@
             this.StockButton.BackColor = System.Drawing.Color.Transparent;
             this.StockButton.FlatAppearance.BorderSize = 0;
             this.StockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StockButton.Location = new System.Drawing.Point(691, 57);
+            this.StockButton.Location = new System.Drawing.Point(1007, 52);
             this.StockButton.Name = "StockButton";
-            this.StockButton.Size = new System.Drawing.Size(151, 110);
+            this.StockButton.Size = new System.Drawing.Size(151, 219);
             this.StockButton.TabIndex = 0;
             this.StockButton.UseVisualStyleBackColor = false;
             this.StockButton.Click += new System.EventHandler(this.button1_Click);
@@ -70,44 +70,45 @@
             this.StaffButton.BackColor = System.Drawing.Color.Transparent;
             this.StaffButton.FlatAppearance.BorderSize = 0;
             this.StaffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StaffButton.Location = new System.Drawing.Point(282, 162);
+            this.StaffButton.Location = new System.Drawing.Point(429, 248);
             this.StaffButton.Name = "StaffButton";
-            this.StaffButton.Size = new System.Drawing.Size(131, 87);
+            this.StaffButton.Size = new System.Drawing.Size(168, 111);
             this.StaffButton.TabIndex = 1;
             this.StaffButton.UseVisualStyleBackColor = false;
             this.StaffButton.Click += new System.EventHandler(this.StaffButton_Click);
             // 
             // OrderButton
             // 
-            this.OrderButton.Location = new System.Drawing.Point(777, 480);
+            this.OrderButton.BackColor = System.Drawing.Color.Transparent;
+            this.OrderButton.FlatAppearance.BorderSize = 0;
+            this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrderButton.Location = new System.Drawing.Point(1098, 606);
             this.OrderButton.Name = "OrderButton";
-            this.OrderButton.Size = new System.Drawing.Size(73, 36);
+            this.OrderButton.Size = new System.Drawing.Size(86, 148);
             this.OrderButton.TabIndex = 2;
-            this.OrderButton.Text = "Menu";
-            this.OrderButton.UseVisualStyleBackColor = true;
+            this.OrderButton.UseVisualStyleBackColor = false;
             this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // OccupancyButton
             // 
-            this.OccupancyButton.BackColor = System.Drawing.Color.DimGray;
+            this.OccupancyButton.BackColor = System.Drawing.Color.Transparent;
             this.OccupancyButton.FlatAppearance.BorderSize = 0;
             this.OccupancyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.OccupancyButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.OccupancyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OccupancyButton.Location = new System.Drawing.Point(777, 413);
+            this.OccupancyButton.Location = new System.Drawing.Point(1087, 803);
             this.OccupancyButton.Name = "OccupancyButton";
-            this.OccupancyButton.Size = new System.Drawing.Size(97, 61);
+            this.OccupancyButton.Size = new System.Drawing.Size(110, 99);
             this.OccupancyButton.TabIndex = 3;
-            this.OccupancyButton.Text = "Reservations";
             this.OccupancyButton.UseVisualStyleBackColor = false;
             this.OccupancyButton.Click += new System.EventHandler(this.OccupancyButton_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.Location = new System.Drawing.Point(715, 451);
+            this.pictureBox2.Location = new System.Drawing.Point(768, 649);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox2.Size = new System.Drawing.Size(31, 22);
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -115,18 +116,19 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(535, 451);
+            this.pictureBox1.Location = new System.Drawing.Point(513, 649);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox1.Size = new System.Drawing.Size(29, 22);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(625, 551);
+            this.pictureBox3.Location = new System.Drawing.Point(643, 792);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox3.Size = new System.Drawing.Size(26, 23);
             this.pictureBox3.TabIndex = 7;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
@@ -134,25 +136,25 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox4.Location = new System.Drawing.Point(535, 656);
+            this.pictureBox4.Location = new System.Drawing.Point(768, 942);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox4.Size = new System.Drawing.Size(31, 29);
             this.pictureBox4.TabIndex = 8;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox5.Location = new System.Drawing.Point(715, 656);
+            this.pictureBox5.Location = new System.Drawing.Point(508, 940);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox5.Size = new System.Drawing.Size(34, 31);
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox6.Location = new System.Drawing.Point(1051, 656);
+            this.pictureBox6.Location = new System.Drawing.Point(1507, 942);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(20, 20);
             this.pictureBox6.TabIndex = 10;
@@ -161,7 +163,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox7.Location = new System.Drawing.Point(1051, 511);
+            this.pictureBox7.Location = new System.Drawing.Point(1507, 734);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(20, 20);
             this.pictureBox7.TabIndex = 11;
@@ -170,7 +172,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox8.Location = new System.Drawing.Point(1051, 229);
+            this.pictureBox8.Location = new System.Drawing.Point(1507, 327);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(20, 20);
             this.pictureBox8.TabIndex = 12;
@@ -179,7 +181,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox9.Location = new System.Drawing.Point(1051, 95);
+            this.pictureBox9.Location = new System.Drawing.Point(1507, 132);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(20, 20);
             this.pictureBox9.TabIndex = 13;
@@ -190,9 +192,9 @@
             this.OrderInfoButton.BackColor = System.Drawing.Color.Transparent;
             this.OrderInfoButton.FlatAppearance.BorderSize = 0;
             this.OrderInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderInfoButton.Location = new System.Drawing.Point(559, 95);
+            this.OrderInfoButton.Location = new System.Drawing.Point(716, 0);
             this.OrderInfoButton.Name = "OrderInfoButton";
-            this.OrderInfoButton.Size = new System.Drawing.Size(86, 67);
+            this.OrderInfoButton.Size = new System.Drawing.Size(267, 271);
             this.OrderInfoButton.TabIndex = 14;
             this.OrderInfoButton.UseVisualStyleBackColor = false;
             this.OrderInfoButton.Click += new System.EventHandler(this.OrderInfoButton_Click);
@@ -201,8 +203,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RestaurantManager.Properties.Resources.Capture5555;
-            this.ClientSize = new System.Drawing.Size(1343, 754);
+            this.BackgroundImage = global::RestaurantManager.Properties.Resources.Restaurant_Management_System___2_;
+            this.ClientSize = new System.Drawing.Size(1914, 1061);
             this.Controls.Add(this.OrderInfoButton);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);

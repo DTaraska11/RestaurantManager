@@ -135,6 +135,12 @@
       <DependentUpon>AppDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="AppHelper.cs" />
+    <Compile Include="MakeReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeReservation.Designer.cs">
+      <DependentUpon>MakeReservation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MakeReservation.resx">
+      <DependentUpon>MakeReservation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +308,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restaurant Management System .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restaurant Management System .jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restaurant Management System  %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restaurant Management System  %282%29.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
