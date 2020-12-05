@@ -494,11 +494,5 @@ namespace RestaurantManager
            
         }
 
-        private void StockClass_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //User user = new User(authority);
-            //var nextForm = new MainPage(user);
-            //nextForm.Show();
-        }
     }
 }
