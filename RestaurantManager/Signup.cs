@@ -106,11 +106,17 @@ namespace RestaurantManager
                 mySqlCommand.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID+1;
 
 
-                MySqlCommand mySqlCommand2 = new MySqlCommand("INSERT INTO staff_info (first_name,last_name,id,email,parent_id,address_id,phone) VALUES (@un,@pass,@id,@email,@parent,@address,@phone)", db.getConnection());
+                MySqlCommand mySqlCommand2 = new MySqlCommand("INSERT INTO staff_info (first_name,last_name,id,email,parent_id,address_id,phone) VALUES (@un,@first,@last,@pass,@id,@email,@parent,@address,@phone)", db.getConnection());
                 mySqlCommand2.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
                 mySqlCommand2.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
                 mySqlCommand2.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID + 1;
                 mySqlCommand2.Parameters.Add("@email", MySqlDbType.VarChar).Value = txtEmail.Text;
+                mySqlCommand2.Parameters.Add("@address", MySqlDbType.VarChar).Value = textBox_Address.Text;
+                mySqlCommand2.Parameters.Add("@phone", MySqlDbType.VarChar).Value = textBox_Phone.Text;
+                mySqlCommand2.Parameters.Add("@first", MySqlDbType.VarChar).Value = textBox_FirstName.Text;
+                mySqlCommand2.Parameters.Add("@last", MySqlDbType.VarChar).Value = textBox_LastName.Text;
+
+
                 if (comboBox1.SelectedItem.Equals("Owner"))
                 {
                     mySqlCommand2.Parameters.Add("@parent", MySqlDbType.Int32).Value = 1;
@@ -300,6 +306,11 @@ namespace RestaurantManager
             }
             User newUser = new User();
             */
+        }
+
+        private void Signup_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

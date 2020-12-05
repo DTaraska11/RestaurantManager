@@ -19,7 +19,7 @@ namespace RestaurantManager.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,11 +61,61 @@ namespace RestaurantManager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Capture5555 {
+            get {
+                object obj = ResourceManager.GetObject("Capture5555", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to if not exists(select fullname from users where fullname= @FullName)                      begin                                                          insert into users(fullname, password, email, usertype)                                           values( @FullName, @Password, @email, @UserType)                                end.
         /// </summary>
         internal static string InsertUser {
             get {
                 return ResourceManager.GetString("InsertUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restaurant_Management_System_ {
+            get {
+                object obj = ResourceManager.GetObject("Restaurant Management System ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restaurant_Management_System___1_ {
+            get {
+                object obj = ResourceManager.GetObject("Restaurant Management System  (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restaurant_Management_System___2_ {
+            get {
+                object obj = ResourceManager.GetObject("Restaurant Management System  (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restaurant_Management_System_1 {
+            get {
+                object obj = ResourceManager.GetObject("Restaurant Management System 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

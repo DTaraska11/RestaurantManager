@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -99,6 +101,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Insert";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // comboB_type1
             // 
@@ -110,7 +113,7 @@
             "Seasoning"});
             this.comboB_type1.Location = new System.Drawing.Point(336, 65);
             this.comboB_type1.Name = "comboB_type1";
-            this.comboB_type1.Size = new System.Drawing.Size(178, 21);
+            this.comboB_type1.Size = new System.Drawing.Size(178, 33);
             this.comboB_type1.TabIndex = 8;
             // 
             // btn_add
@@ -128,7 +131,7 @@
             this.lab_type1.AutoSize = true;
             this.lab_type1.Location = new System.Drawing.Point(285, 70);
             this.lab_type1.Name = "lab_type1";
-            this.lab_type1.Size = new System.Drawing.Size(31, 13);
+            this.lab_type1.Size = new System.Drawing.Size(60, 25);
             this.lab_type1.TabIndex = 6;
             this.lab_type1.Text = "Type";
             // 
@@ -136,7 +139,7 @@
             // 
             this.txt_qty.Location = new System.Drawing.Point(336, 22);
             this.txt_qty.Name = "txt_qty";
-            this.txt_qty.Size = new System.Drawing.Size(178, 19);
+            this.txt_qty.Size = new System.Drawing.Size(178, 31);
             this.txt_qty.TabIndex = 5;
             // 
             // lab_qty
@@ -144,7 +147,7 @@
             this.lab_qty.AutoSize = true;
             this.lab_qty.Location = new System.Drawing.Point(285, 28);
             this.lab_qty.Name = "lab_qty";
-            this.lab_qty.Size = new System.Drawing.Size(23, 13);
+            this.lab_qty.Size = new System.Drawing.Size(45, 25);
             this.lab_qty.TabIndex = 4;
             this.lab_qty.Text = "Qty";
             // 
@@ -152,7 +155,7 @@
             // 
             this.txt_safe.Location = new System.Drawing.Point(104, 64);
             this.txt_safe.Name = "txt_safe";
-            this.txt_safe.Size = new System.Drawing.Size(134, 19);
+            this.txt_safe.Size = new System.Drawing.Size(134, 31);
             this.txt_safe.TabIndex = 3;
             // 
             // lab_safe
@@ -160,7 +163,7 @@
             this.lab_safe.AutoSize = true;
             this.lab_safe.Location = new System.Drawing.Point(21, 70);
             this.lab_safe.Name = "lab_safe";
-            this.lab_safe.Size = new System.Drawing.Size(58, 13);
+            this.lab_safe.Size = new System.Drawing.Size(113, 25);
             this.lab_safe.TabIndex = 2;
             this.lab_safe.Text = "Safe stock";
             // 
@@ -168,7 +171,7 @@
             // 
             this.txt_name1.Location = new System.Drawing.Point(104, 25);
             this.txt_name1.Name = "txt_name1";
-            this.txt_name1.Size = new System.Drawing.Size(134, 19);
+            this.txt_name1.Size = new System.Drawing.Size(134, 31);
             this.txt_name1.TabIndex = 1;
             // 
             // lab_name1
@@ -176,7 +179,7 @@
             this.lab_name1.AutoSize = true;
             this.lab_name1.Location = new System.Drawing.Point(21, 28);
             this.lab_name1.Name = "lab_name1";
-            this.lab_name1.Size = new System.Drawing.Size(57, 13);
+            this.lab_name1.Size = new System.Drawing.Size(114, 25);
             this.lab_name1.TabIndex = 0;
             this.lab_name1.Text = "item Name";
             // 
@@ -229,7 +232,7 @@
             "Seasoning"});
             this.comboB_type.Location = new System.Drawing.Point(68, 70);
             this.comboB_type.Name = "comboB_type";
-            this.comboB_type.Size = new System.Drawing.Size(187, 21);
+            this.comboB_type.Size = new System.Drawing.Size(187, 33);
             this.comboB_type.TabIndex = 5;
             // 
             // btn_reset
@@ -257,7 +260,7 @@
             this.lab_type.AutoSize = true;
             this.lab_type.Location = new System.Drawing.Point(24, 73);
             this.lab_type.Name = "lab_type";
-            this.lab_type.Size = new System.Drawing.Size(31, 13);
+            this.lab_type.Size = new System.Drawing.Size(60, 25);
             this.lab_type.TabIndex = 3;
             this.lab_type.Text = "Type";
             // 
@@ -265,7 +268,7 @@
             // 
             this.txt_name.Location = new System.Drawing.Point(68, 45);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(187, 19);
+            this.txt_name.Size = new System.Drawing.Size(187, 31);
             this.txt_name.TabIndex = 7;
             // 
             // lab_name
@@ -273,7 +276,7 @@
             this.lab_name.AutoSize = true;
             this.lab_name.Location = new System.Drawing.Point(8, 49);
             this.lab_name.Name = "lab_name";
-            this.lab_name.Size = new System.Drawing.Size(54, 13);
+            this.lab_name.Size = new System.Drawing.Size(108, 25);
             this.lab_name.TabIndex = 4;
             this.lab_name.Text = "itemName";
             // 
@@ -281,7 +284,7 @@
             // 
             this.txt_id.Location = new System.Drawing.Point(68, 20);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(187, 19);
+            this.txt_id.Size = new System.Drawing.Size(187, 31);
             this.txt_id.TabIndex = 6;
             // 
             // lab_ID
@@ -289,7 +292,7 @@
             this.lab_ID.AutoSize = true;
             this.lab_ID.Location = new System.Drawing.Point(27, 26);
             this.lab_ID.Name = "lab_ID";
-            this.lab_ID.Size = new System.Drawing.Size(18, 13);
+            this.lab_ID.Size = new System.Drawing.Size(32, 25);
             this.lab_ID.TabIndex = 2;
             this.lab_ID.Text = "ID";
             // 
@@ -305,7 +308,23 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);

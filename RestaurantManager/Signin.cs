@@ -137,5 +137,10 @@ namespace RestaurantManager
             User newUser = new User();
             */
         }
+
+        private void Signin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

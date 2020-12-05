@@ -71,5 +71,11 @@ namespace RestaurantManager
             var nextForm = new StaffInfo(user.getAuthority());
             nextForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var nextForm = new _2DMain();
+            nextForm.Show();
+        }
     }
 }

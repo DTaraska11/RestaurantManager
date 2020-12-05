@@ -44,12 +44,12 @@
             this.search = new System.Windows.Forms.TextBox();
             this.LogOut = new System.Windows.Forms.Button();
             this.MenuPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
             this.drinks2 = new RestaurantManager.Drinks();
             this.dessert2 = new RestaurantManager.Dessert();
             this.food2 = new RestaurantManager.Food();
             this.snacks2 = new RestaurantManager.Snacks();
             this.myCart2 = new RestaurantManager.OrderItem();
-            this.usersTableAdapter1 = new RestaurantManager.AppDataSetTableAdapters.UsersTableAdapter();
             this.MenuPanel.SuspendLayout();
             this.HomePanel.SuspendLayout();
             this.MenuPanel2.SuspendLayout();
@@ -61,9 +61,9 @@
             this.FOOD.ForeColor = System.Drawing.Color.LimeGreen;
             this.FOOD.Image = ((System.Drawing.Image)(resources.GetObject("FOOD.Image")));
             this.FOOD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FOOD.Location = new System.Drawing.Point(245, 1);
+            this.FOOD.Location = new System.Drawing.Point(245, 0);
             this.FOOD.Name = "FOOD";
-            this.FOOD.Size = new System.Drawing.Size(129, 150);
+            this.FOOD.Size = new System.Drawing.Size(129, 152);
             this.FOOD.TabIndex = 7;
             this.FOOD.Text = "FOOD";
             this.FOOD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -106,7 +106,7 @@
             this.SNACKS.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SNACKS.Location = new System.Drawing.Point(124, 0);
             this.SNACKS.Name = "SNACKS";
-            this.SNACKS.Size = new System.Drawing.Size(125, 151);
+            this.SNACKS.Size = new System.Drawing.Size(125, 153);
             this.SNACKS.TabIndex = 8;
             this.SNACKS.Text = "SNACKS";
             this.SNACKS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -136,11 +136,12 @@
             this.ORDER.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ORDER.Location = new System.Drawing.Point(488, 0);
             this.ORDER.Name = "ORDER";
-            this.ORDER.Size = new System.Drawing.Size(132, 149);
+            this.ORDER.Size = new System.Drawing.Size(132, 152);
             this.ORDER.TabIndex = 13;
             this.ORDER.Text = "ORDER";
             this.ORDER.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ORDER.UseVisualStyleBackColor = false;
+            this.ORDER.Click += new System.EventHandler(this.ORDER_Click);
             // 
             // TwoD
             // 
@@ -210,11 +211,11 @@
             // 
             this.search.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Orchid;
-            this.search.Location = new System.Drawing.Point(5, 85);
+            this.search.Location = new System.Drawing.Point(18, 95);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(467, 53);
+            this.search.Size = new System.Drawing.Size(442, 53);
             this.search.TabIndex = 19;
-            this.search.Text = "search menu";
+            this.search.Text = "select menu";
             // 
             // LogOut
             // 
@@ -241,6 +242,10 @@
             this.MenuPanel2.Size = new System.Drawing.Size(619, 387);
             this.MenuPanel2.TabIndex = 21;
             // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
             // drinks2
             // 
             this.drinks2.AutoScroll = true;
@@ -249,6 +254,7 @@
             this.drinks2.Name = "drinks2";
             this.drinks2.Size = new System.Drawing.Size(619, 387);
             this.drinks2.TabIndex = 0;
+            this.drinks2.Load += new System.EventHandler(this.drinks2_Load);
             // 
             // dessert2
             // 
@@ -284,10 +290,6 @@
             this.myCart2.Name = "myCart2";
             this.myCart2.Size = new System.Drawing.Size(619, 387);
             this.myCart2.TabIndex = 5;
-            // 
-            // usersTableAdapter1
-            // 
-            this.usersTableAdapter1.ClearBeforeFill = true;
             // 
             // Menu
             // 

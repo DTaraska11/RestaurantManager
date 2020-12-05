@@ -259,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/RestaurantManager/2DView.cs
+/RestaurantManager/2DView.Designer.cs
+/RestaurantManager/2DView.resx
+/Setup/Setup.vdproj
