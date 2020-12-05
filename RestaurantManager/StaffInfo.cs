@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace RestaurantManager
 {
@@ -21,8 +22,9 @@ namespace RestaurantManager
         Boolean insert = true;
         Boolean add = true;
         Boolean local = false;
+        int currentID;
         int authority;
-        
+
         // string strcon = "server=192.168.146.128;user=root;password=root;database=Restaurant;";
         public StaffInfo()
         {
@@ -36,7 +38,7 @@ namespace RestaurantManager
 
         private void PersonalInfo_Load(object sender, EventArgs e)
         {
-   
+            
             treeView1.ExpandAll();
             InitTree(this.treeView1.Nodes, "0");
             treeView1.ExpandAll();
@@ -62,9 +64,9 @@ namespace RestaurantManager
         }
         private void InitTree(TreeNodeCollection Nds, string parentId)
         {
-           
-          
-            
+
+
+
             DataView dv = new DataView();
             TreeNode tmpNd;
             string intId;
@@ -80,28 +82,32 @@ namespace RestaurantManager
                 dt.TableName = "staff_info";
                 dv.Table = dt;
             }
-            
+
             dv.RowFilter = "parent_id='" + parentId + "'";
+
             foreach (DataRowView drv in dv)
             {
                 tmpNd = new TreeNode();
-                tmpNd.Tag = drv["id"].ToString();       
+                tmpNd.Tag = drv["id"].ToString();
                 tmpNd.Text = drv["last_name"].ToString();
                 if (drv["parent_id"].ToString() == "1")  //10 means admin
                 {
                     tmpNd.ImageIndex = tmpNd.SelectedImageIndex = 0;
                 }
                 else
-                tmpNd.ImageIndex = tmpNd.SelectedImageIndex = 1;
+                    tmpNd.ImageIndex = tmpNd.SelectedImageIndex = 1;
+                this.treeView1.BeginUpdate();
                 Nds.Add(tmpNd);
+                this.treeView1.EndUpdate();
                 intId = drv["parent_id"].ToString();
                 InitTree(tmpNd.Nodes, tmpNd.Tag.ToString());
             }
+
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-           
+            currentID = int.Parse(e.Node.Tag.ToString());
             if (e.Action == TreeViewAction.ByMouse)
             {
                 DataView dv = new DataView();
@@ -117,8 +123,8 @@ namespace RestaurantManager
                     dt.TableName = "staff_info";
                     dv.Table = dt;
                 }
-              
-               
+
+
                 DataRowView drv = dv[0];
                 if (e.Node.Parent != null)
                 {
@@ -132,30 +138,42 @@ namespace RestaurantManager
                     if (drv["parent_id"].ToString() == "4") cmb_position.SelectedIndex = 3;
                     txt_Phone.Text = drv["phone"].ToString();
                     txt_Address.Text = drv["address_id"].ToString();
+
                     if (!drv["birthday"].Equals(System.DBNull.Value))
                     {
                         dateTimePicker1.Value = Convert.ToDateTime(drv["Birthday"]);
                     }
                     else dateTimePicker1.Value = System.DateTime.Today;
+                    if (!drv["pic"].Equals(System.DBNull.Value))
+                    {
+                        Byte[] Files = (Byte[])drv["pic"];
+                        MemoryStream mysm = new MemoryStream((byte[])drv["pic"]);
+                        Image ims = Image.FromStream(mysm);
+                        this.pictureBox1.Image = ims;
+                    }
+                    else this.pictureBox1.Image = null;
+
 
 
                     txt_Email.Text = drv["email"].ToString();
+
+
                     toolStripButton2.Enabled = true;
                     btn_del.Enabled = true;
                 }
                 else
-                { 
+                {
                     toolStripButton2.Enabled = false;
                     btn_del.Enabled = false;
                 }
-                
-              
+
+
             }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-           
+
             lab_position.Visible = true;
             cmb_position.Visible = true;
             treeView1.Enabled = false;
@@ -167,7 +185,7 @@ namespace RestaurantManager
             txt_SSN.Text = "";
             txt_Phone.Text = "";
             txt_Address.Text = "";
-        //    txt_Birthday.Text = "";
+            //    txt_Birthday.Text = "";
             txt_Email.Text = "";
             //can edit
             comBox_gender.DropDownStyle = ComboBoxStyle.DropDown;
@@ -181,11 +199,11 @@ namespace RestaurantManager
 
         private void btn_finished_Click(object sender, EventArgs e)
         {
-           
-          
+
+
         }
 
-       
+
 
         private void insertData()
         {
@@ -308,10 +326,10 @@ namespace RestaurantManager
                 toolStripButton1.Text = "Add";
                 toolStripButton1.Image = imageList1.Images[2];
                 toolStripButton1.Enabled = true;
-               
+
                 initial();
             }
-            }
+        }
         private void deleteData()
         {
             try
@@ -338,7 +356,7 @@ namespace RestaurantManager
                     DataSet ds = new DataSet();
                     ada.Fill(ds, "staff_info");
                     MySQLConnection1.CloseConn();
-                }               
+                }
                 treeView1.Nodes.Clear();
                 InitTree(this.treeView1.Nodes, "0");
                 treeView1.ExpandAll();
@@ -354,7 +372,7 @@ namespace RestaurantManager
 
         private void btn_del_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Do you want to delete "+treeView1.SelectedNode.Text, "warning", MessageBoxButtons.OKCancel);
+            DialogResult dr = MessageBox.Show("Do you want to delete " + treeView1.SelectedNode.Text, "warning", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
                 deleteData();
@@ -366,7 +384,7 @@ namespace RestaurantManager
 
         private void toolStrip_save_Click(object sender, EventArgs e)
         {
-            if (txt_name.Text == "" || txt_SSN.Text == ""|| txt_Phone.Text == "" ||txt_Address.Text == ""||comBox_gender.Text == ""||cmb_position.Text=="")
+            if (txt_name.Text == "" || txt_SSN.Text == "" || txt_Phone.Text == "" || txt_Address.Text == "" || comBox_gender.Text == "" || cmb_position.Text == "")
             {
                 MessageBox.Show("you can leave blanks before submit");
                 return;
@@ -389,7 +407,7 @@ namespace RestaurantManager
             toolStripButton2.Enabled = false;
             toolStripButton1.Enabled = true;
             treeView1.Enabled = true;
-           // btn_add.Enabled = true;
+            // btn_add.Enabled = true;
             cmb_position.Enabled = false;
             btn_finished.Enabled = false;
             //clear txtbox
@@ -408,6 +426,12 @@ namespace RestaurantManager
             txt_Email.ReadOnly = true;
             cmb_position.SelectedIndex = 0;
             dateTimePicker1.Enabled = false;
+            //camera
+            btn_Addpic.Enabled = false;
+            btn_scan.Enabled = false;
+            btn_savpic.Enabled = false;
+            txt_pic.Text = "";
+            txt_pic.ReadOnly = true;
         }
 
 
@@ -437,7 +461,7 @@ namespace RestaurantManager
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-           
+
             if (add)
             {
                 canEdit();
@@ -455,7 +479,7 @@ namespace RestaurantManager
                 btn_del.Enabled = true;
                 initial();
             }
-          
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -476,6 +500,10 @@ namespace RestaurantManager
             toolStrip_save.Enabled = true;
             toolStripButton1.Enabled = false;
             btn_del.Enabled = false;
+            btn_Addpic.Enabled = true;
+            btn_scan.Enabled = true;
+            btn_savpic.Enabled = true;
+            txt_pic.ReadOnly = false;
 
         }
 
@@ -496,7 +524,97 @@ namespace RestaurantManager
             //var nextForm = new MainPage(user);
             //nextForm.Show();
         }
-    }
-    
 
+
+
+        private void btn_Addpic_Click(object sender, EventArgs e)
+        {
+            Camera ca = new Camera(currentID);
+           // f.ChangeColor += new ChangeFormColor(f_ChangeColor);
+            ca.updatePic += new updatePic(ca_updatePic);
+            ca.ShowDialog();
+        }
+        void ca_updatePic(bool topmost)
+        {
+            DataView dv = new DataView();
+            DataTable dt = MySQLConnection1.GetDataTableValue("select * from staff_info where id = '" + currentID + "'");
+            dt.TableName = "staff_info";
+            dv.Table = dt;
+            DataRowView drv = dv[0];
+            Byte[] Files = (Byte[])drv["pic"];
+            MemoryStream mysm = new MemoryStream((byte[])drv["pic"]);
+            Image ims = Image.FromStream(mysm);
+            this.pictureBox1.Image = ims;
+        }
+
+        private void btn_scan_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Title = "please choose the pic you want to use";
+
+            ofd.Filter = "All Files(*.*)|*.*|位图(*.bmp)|*.bmp|JPEG(*.jpg)|*.jpg";
+
+            ofd.ShowDialog();
+
+            txt_pic.Text = ofd.FileName;
+
+            //if (!File.Exists(ofd.FileName))
+
+            //{
+
+            //    MessageBox.Show("pic is null");
+
+            //    return;
+
+            //}
+        }
+
+        private void btn_savpic_Click(object sender, EventArgs e)
+        {
+            string strPath = txt_pic.Text.Trim();
+
+              FileStream fs = new FileStream(strPath, FileMode.Open, FileAccess.Read);
+           
+           byte[] byteFile = new byte[fs.Length];
+          
+            fs.Read(byteFile, 0, (int)fs.Length);
+           
+             fs.Close();
+            using (MySqlConnection conn = new MySqlConnection(MySQLConnection1.SqlCon))
+            {
+
+                string UpdateSql = "update staff_info" +
+                      " set pic = @ImgData" +
+                      " where id = '" + currentID + "'";
+                //   string sql = "Insert Into picTest Values (@ImgData) "; 
+
+                using (MySqlCommand cmd = new MySqlCommand(UpdateSql))
+                {
+                    MySqlParameter param = new MySqlParameter("ImgData", MySqlDbType.VarBinary, byteFile.Length);
+                    param.Value = byteFile;
+                    cmd.Parameters.Add(param);
+                    cmd.Connection = conn;
+                    conn.Open();
+                    int i = cmd.ExecuteNonQuery();
+                    MessageBox.Show("success!");
+                }
+            }
+
+            DataView dv = new DataView();
+            DataTable dt = MySQLConnection1.GetDataTableValue("select * from staff_info where id = '" + currentID + "'");
+                dt.TableName = "staff_info";
+                dv.Table = dt;
+
+
+            DataRowView drv = dv[0];
+
+                    Byte[] Files = (Byte[])drv["pic"];
+                    MemoryStream mysm = new MemoryStream((byte[])drv["pic"]);
+                    Image ims = Image.FromStream(mysm);
+                    this.pictureBox1.Image = ims;
+
+
+            }
+    }
 }
