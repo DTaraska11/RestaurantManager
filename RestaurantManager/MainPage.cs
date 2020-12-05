@@ -21,7 +21,7 @@ namespace RestaurantManager
         {
 
             int userAuth = user.getAuthority();
-            if( userAuth != 0)
+            if( userAuth != 1)
             {
                 button8.Enabled = false;
                 button5.Enabled = false;
@@ -61,15 +61,15 @@ namespace RestaurantManager
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            StockClass stock = new StockClass();
+            StockClass stock = new StockClass(user.getAuthority());
              stock.ShowDialog();
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            this.Close();
-            var nextForm = new StaffInfo();
-            nextForm.Show();
+          
+            var nextForm = new StaffInfo(user.getAuthority());
+            nextForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

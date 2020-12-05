@@ -37,9 +37,13 @@ namespace RestaurantManager
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
             var nextForm = new Menu();
-            nextForm.Show();
+            nextForm.ShowDialog();
+        }
+
+        private void MainEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

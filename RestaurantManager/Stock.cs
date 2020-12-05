@@ -18,6 +18,7 @@ namespace RestaurantManager
         private bool m_isdataGridViewBegingEdit = false;
         public DataGridViewTextBoxEditingControl CellEdit = null;
         bool isSearchOrAddIsClick = false;
+        int authority;
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter && (m_isdataGridViewBegingEdit == true || this.dataGridView1.Focused == true))
@@ -31,6 +32,11 @@ namespace RestaurantManager
         public StockClass()
         {
             InitializeComponent();
+        }
+        public StockClass(int authority)
+        {
+            InitializeComponent();
+            this.authority = authority;
         }
 
         private void Stock_Load(object sender, EventArgs e)
@@ -486,11 +492,6 @@ namespace RestaurantManager
             if (!(char.IsNumber(e.KeyChar)) && e.KeyChar != (char)8)
                       e.Handled = true;
            
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

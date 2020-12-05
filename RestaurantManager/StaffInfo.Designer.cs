@@ -44,6 +44,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_finished = new System.Windows.Forms.Button();
             this.btn_del = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cmb_position = new System.Windows.Forms.ComboBox();
             this.lab_position = new System.Windows.Forms.Label();
@@ -60,12 +61,15 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btn_savpic = new System.Windows.Forms.Button();
+            this.txt_pic = new System.Windows.Forms.TextBox();
+            this.btn_scan = new System.Windows.Forms.Button();
+            this.btn_Addpic = new System.Windows.Forms.Button();
             this.lab_Phone = new System.Windows.Forms.Label();
             this.lab_Address = new System.Windows.Forms.Label();
             this.txt_Phone = new System.Windows.Forms.TextBox();
             this.lab_name = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -75,6 +79,7 @@
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -194,7 +199,7 @@
             this.panel2.Location = new System.Drawing.Point(228, 456);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(670, 54);
+            this.panel2.Size = new System.Drawing.Size(718, 54);
             this.panel2.TabIndex = 1;
             // 
             // btn_finished
@@ -212,7 +217,7 @@
             // 
             // btn_del
             // 
-            this.btn_del.Location = new System.Drawing.Point(1182, 15);
+            this.btn_del.Location = new System.Drawing.Point(612, 18);
             this.btn_del.Margin = new System.Windows.Forms.Padding(2);
             this.btn_del.Name = "btn_del";
             this.btn_del.Size = new System.Drawing.Size(83, 23);
@@ -220,6 +225,18 @@
             this.btn_del.Text = "Del";
             this.btn_del.UseVisualStyleBackColor = true;
             this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Location = new System.Drawing.Point(22, 15);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(83, 23);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "Add";
+            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Visible = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // panel3
             // 
@@ -245,7 +262,7 @@
             this.panel3.Location = new System.Drawing.Point(228, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(670, 456);
+            this.panel3.Size = new System.Drawing.Size(718, 456);
             this.panel3.TabIndex = 2;
             // 
             // cmb_position
@@ -367,7 +384,7 @@
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(509, 0);
+            this.panel4.Location = new System.Drawing.Point(557, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(157, 452);
@@ -380,27 +397,78 @@
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(157, 247);
+            this.panel6.Size = new System.Drawing.Size(157, 219);
             this.panel6.TabIndex = 1;
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 247);
+            this.pictureBox1.Size = new System.Drawing.Size(157, 219);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.btn_savpic);
+            this.panel5.Controls.Add(this.txt_pic);
+            this.panel5.Controls.Add(this.btn_scan);
+            this.panel5.Controls.Add(this.btn_Addpic);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 247);
+            this.panel5.Location = new System.Drawing.Point(0, 219);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(157, 205);
+            this.panel5.Size = new System.Drawing.Size(157, 233);
             this.panel5.TabIndex = 0;
+            // 
+            // btn_savpic
+            // 
+            this.btn_savpic.Enabled = false;
+            this.btn_savpic.Location = new System.Drawing.Point(104, 42);
+            this.btn_savpic.Name = "btn_savpic";
+            this.btn_savpic.Size = new System.Drawing.Size(41, 23);
+            this.btn_savpic.TabIndex = 4;
+            this.btn_savpic.Text = "save";
+            this.btn_savpic.UseVisualStyleBackColor = true;
+            this.btn_savpic.Click += new System.EventHandler(this.btn_savpic_Click);
+            // 
+            // txt_pic
+            // 
+            this.txt_pic.Location = new System.Drawing.Point(15, 16);
+            this.txt_pic.Name = "txt_pic";
+            this.txt_pic.ReadOnly = true;
+            this.txt_pic.Size = new System.Drawing.Size(130, 20);
+            this.txt_pic.TabIndex = 3;
+            // 
+            // btn_scan
+            // 
+            this.btn_scan.Enabled = false;
+            this.btn_scan.Location = new System.Drawing.Point(30, 42);
+            this.btn_scan.Name = "btn_scan";
+            this.btn_scan.Size = new System.Drawing.Size(68, 23);
+            this.btn_scan.TabIndex = 2;
+            this.btn_scan.Text = "open file";
+            this.btn_scan.UseVisualStyleBackColor = true;
+            this.btn_scan.Click += new System.EventHandler(this.btn_scan_Click);
+            // 
+            // btn_Addpic
+            // 
+            this.btn_Addpic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Addpic.BackgroundImage")));
+            this.btn_Addpic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_Addpic.Enabled = false;
+            this.btn_Addpic.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Addpic.Location = new System.Drawing.Point(30, 154);
+            this.btn_Addpic.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Addpic.Name = "btn_Addpic";
+            this.btn_Addpic.Size = new System.Drawing.Size(106, 73);
+            this.btn_Addpic.TabIndex = 0;
+            this.btn_Addpic.UseVisualStyleBackColor = true;
+            this.btn_Addpic.Click += new System.EventHandler(this.btn_Addpic_Click);
             // 
             // lab_Phone
             // 
@@ -450,30 +518,19 @@
             this.txt_name.Size = new System.Drawing.Size(277, 20);
             this.txt_name.TabIndex = 0;
             // 
-            // btn_add
-            // 
-            this.btn_add.Location = new System.Drawing.Point(22, 15);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(83, 23);
-            this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Add";
-            this.btn_add.UseVisualStyleBackColor = true;
-            this.btn_add.Visible = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
             // StaffInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 510);
+            this.ClientSize = new System.Drawing.Size(946, 510);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "StaffInfo";
             this.Text = "Staff Information";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.StaffInfo_FormClosed);
             this.Load += new System.EventHandler(this.PersonalInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -487,6 +544,8 @@
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -500,7 +559,6 @@
         private System.Windows.Forms.Button btn_del;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label lab_mail;
@@ -529,6 +587,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.Button btn_add;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Addpic;
+        private System.Windows.Forms.Button btn_scan;
+        private System.Windows.Forms.TextBox txt_pic;
+        private System.Windows.Forms.Button btn_savpic;
     }
 }
 
