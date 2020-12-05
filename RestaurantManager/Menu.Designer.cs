@@ -61,9 +61,9 @@
             this.FOOD.ForeColor = System.Drawing.Color.LimeGreen;
             this.FOOD.Image = ((System.Drawing.Image)(resources.GetObject("FOOD.Image")));
             this.FOOD.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.FOOD.Location = new System.Drawing.Point(245, 2);
+            this.FOOD.Location = new System.Drawing.Point(245, 0);
             this.FOOD.Name = "FOOD";
-            this.FOOD.Size = new System.Drawing.Size(129, 150);
+            this.FOOD.Size = new System.Drawing.Size(129, 152);
             this.FOOD.TabIndex = 7;
             this.FOOD.Text = "FOOD";
             this.FOOD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -106,7 +106,7 @@
             this.SNACKS.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SNACKS.Location = new System.Drawing.Point(124, 0);
             this.SNACKS.Name = "SNACKS";
-            this.SNACKS.Size = new System.Drawing.Size(125, 151);
+            this.SNACKS.Size = new System.Drawing.Size(125, 153);
             this.SNACKS.TabIndex = 8;
             this.SNACKS.Text = "SNACKS";
             this.SNACKS.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -211,9 +211,9 @@
             // 
             this.search.Font = new System.Drawing.Font("Ink Free", 13.875F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Orchid;
-            this.search.Location = new System.Drawing.Point(5, 85);
+            this.search.Location = new System.Drawing.Point(18, 95);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(467, 53);
+            this.search.Size = new System.Drawing.Size(442, 53);
             this.search.TabIndex = 19;
             this.search.Text = "select menu";
             // 

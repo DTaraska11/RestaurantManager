@@ -37,6 +37,7 @@ namespace RestaurantManager
                 int MenuItemID = 0;
                 string MenuItemName = "fries";
                 int MenuItemCost = 4;
+                string D = " ";
 
 
                 mysqlCon.Open();
@@ -45,6 +46,7 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost);
+                mySqlCmd.Parameters.AddWithValue("_Description", D);
                 mySqlCmd.ExecuteNonQuery();
 
                 DialogResult result = MessageBox.Show("Submitted to Order Successfully!");
@@ -67,7 +69,7 @@ namespace RestaurantManager
                 int MenuItemID = 0;
                 string MenuItemName = "bread";
                 int MenuItemCost = 2;
-
+                string D = " ";
 
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
@@ -75,6 +77,7 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost);
+                mySqlCmd.Parameters.AddWithValue("_Description", D);
                 mySqlCmd.ExecuteNonQuery();
 
                 DialogResult result = MessageBox.Show("Submitted to Order Successfully!");
@@ -97,7 +100,7 @@ namespace RestaurantManager
                 int MenuItemID = 0;
                 string MenuItemName = "hotdog";
                 int MenuItemCost = 7;
-
+                string D = " ";
 
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
@@ -105,6 +108,7 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost);
+                mySqlCmd.Parameters.AddWithValue("_Description", D);
                 mySqlCmd.ExecuteNonQuery();
 
                 DialogResult result = MessageBox.Show("Submitted to Order Successfully!");
@@ -127,7 +131,7 @@ namespace RestaurantManager
                 int MenuItemID = 0;
                 string MenuItemName = "pretzel";
                 int MenuItemCost = 5;
-
+                string D = " ";
 
                 mysqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("MenuItemAddOrEdit", mysqlCon);
@@ -135,6 +139,7 @@ namespace RestaurantManager
                 mySqlCmd.Parameters.AddWithValue("_MenuItemID", MenuItemID);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemName", MenuItemName);
                 mySqlCmd.Parameters.AddWithValue("_MenuItemCost", MenuItemCost);
+                mySqlCmd.Parameters.AddWithValue("_Description", D);
                 mySqlCmd.ExecuteNonQuery();
                 
                 DialogResult result= MessageBox.Show("Submitted to Order Successfully!");
