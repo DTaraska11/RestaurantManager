@@ -101,7 +101,7 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Insert";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+           // this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // comboB_type1
             // 
