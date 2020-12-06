@@ -61,6 +61,8 @@ namespace RestaurantManager
             OrderButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
             OrderInfoButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
             OrderInfoButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            statButton.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            statButton.FlatAppearance.MouseDownBackColor = Color.Transparent;
 
             setTableSeating();
             
@@ -306,6 +308,12 @@ namespace RestaurantManager
             setTableSeating();
 
 
+        }
+
+        private void statButton_Click(object sender, EventArgs e)
+        {
+            var nextForm = new Statistics();
+            nextForm.Show();
         }
     }
 }

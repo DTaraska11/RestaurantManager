@@ -47,6 +47,14 @@ namespace RestaurantManager
             //d=d.Insert(0, "'");
             //d = d.Insert(d.Length, "'");
 
+            if(d == null)
+            {
+                MessageBox.Show("Please pick a valid date and time");
+                return;
+            }
+
+
+
 
             if (checkRes(d) == false)
             {

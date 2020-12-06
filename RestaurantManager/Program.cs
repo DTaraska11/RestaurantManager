@@ -16,9 +16,9 @@ namespace RestaurantManager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //     Application.Run(new Welcome());
-              Application.Run(new StaffInfo());
-            //Application.Run(new Camera());
+            Application.Run(new Welcome());
+             
+            
         }
     }
 }

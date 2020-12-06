@@ -42,6 +42,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.OrderInfoButton = new System.Windows.Forms.Button();
+            this.statButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -199,12 +200,25 @@
             this.OrderInfoButton.UseVisualStyleBackColor = false;
             this.OrderInfoButton.Click += new System.EventHandler(this.OrderInfoButton_Click);
             // 
+            // statButton
+            // 
+            this.statButton.BackColor = System.Drawing.Color.Transparent;
+            this.statButton.FlatAppearance.BorderSize = 0;
+            this.statButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statButton.Location = new System.Drawing.Point(188, 235);
+            this.statButton.Name = "statButton";
+            this.statButton.Size = new System.Drawing.Size(132, 112);
+            this.statButton.TabIndex = 16;
+            this.statButton.UseVisualStyleBackColor = false;
+            this.statButton.Click += new System.EventHandler(this.statButton_Click);
+            // 
             // _2DMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RestaurantManager.Properties.Resources.Restaurant_Management_System___2_;
             this.ClientSize = new System.Drawing.Size(1914, 1061);
+            this.Controls.Add(this.statButton);
             this.Controls.Add(this.OrderInfoButton);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -251,5 +265,6 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button OrderInfoButton;
+        private System.Windows.Forms.Button statButton;
     }
 }
