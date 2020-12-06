@@ -100,7 +100,7 @@
     </Compile>
     <Compile Include="Camera.Designer.cs">
       <DependentUpon>Camera.cs</DependentUpon>
-
+       </Compile>
     <Compile Include="2DMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,7 +238,7 @@
 
     <EmbeddedResource Include="Camera.resx">
       <DependentUpon>Camera.cs</DependentUpon>
-
+      </EmbeddedResource>
     <EmbeddedResource Include="2DMain.resx">
       <DependentUpon>2DMain.cs</DependentUpon>
     </EmbeddedResource>
