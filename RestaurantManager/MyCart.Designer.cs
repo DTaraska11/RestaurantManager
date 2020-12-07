@@ -247,7 +247,7 @@
             this.STARTOVER.ForeColor = System.Drawing.Color.Fuchsia;
             this.STARTOVER.Location = new System.Drawing.Point(751, 3);
             this.STARTOVER.Name = "STARTOVER";
-            this.STARTOVER.Size = new System.Drawing.Size(211, 48);
+            this.STARTOVER.Size = new System.Drawing.Size(211, 58);
             this.STARTOVER.TabIndex = 19;
             this.STARTOVER.Text = "START OVER";
             this.STARTOVER.UseVisualStyleBackColor = false;
@@ -259,7 +259,7 @@
             this.FINISHORDER.ForeColor = System.Drawing.Color.Fuchsia;
             this.FINISHORDER.Location = new System.Drawing.Point(972, 3);
             this.FINISHORDER.Name = "FINISHORDER";
-            this.FINISHORDER.Size = new System.Drawing.Size(211, 48);
+            this.FINISHORDER.Size = new System.Drawing.Size(211, 58);
             this.FINISHORDER.TabIndex = 20;
             this.FINISHORDER.Text = "FINISH ORDER";
             this.FINISHORDER.UseVisualStyleBackColor = false;
