@@ -53,9 +53,9 @@
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 34);
+            this.dataGridView1.Location = new System.Drawing.Point(119, 36);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 168);
+            this.dataGridView1.Size = new System.Drawing.Size(453, 160);
             this.dataGridView1.TabIndex = 1;
             // 
             // appDataSet
@@ -74,7 +74,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(310, 258);
+            this.button1.Location = new System.Drawing.Point(295, 244);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 52);
             this.button1.TabIndex = 2;

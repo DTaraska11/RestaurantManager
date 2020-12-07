@@ -106,9 +106,9 @@ namespace RestaurantManager
                 mySqlCommand.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID+1;
 
 
-                MySqlCommand mySqlCommand2 = new MySqlCommand("INSERT INTO staff_info (first_name,last_name,id,email,parent_id,address_id,phone) VALUES (@un,@first,@last,@pass,@id,@email,@parent,@address,@phone)", db.getConnection());
-                mySqlCommand2.Parameters.Add("@un", MySqlDbType.VarChar).Value = txtFullName.Text;
-                mySqlCommand2.Parameters.Add("@pass", MySqlDbType.VarChar).Value = txtPass.Text;
+                MySqlCommand mySqlCommand2 = new MySqlCommand("INSERT INTO staff_info (first_name,last_name,id,email,parent_id,address_id,phone) VALUES (@first,@last,@id,@email,@parent,@address,@phone)", db.getConnection());
+         
+                
                 mySqlCommand2.Parameters.Add("@id", MySqlDbType.Int32).Value = maxID + 1;
                 mySqlCommand2.Parameters.Add("@email", MySqlDbType.VarChar).Value = txtEmail.Text;
                 mySqlCommand2.Parameters.Add("@address", MySqlDbType.VarChar).Value = textBox_Address.Text;
@@ -125,8 +125,8 @@ namespace RestaurantManager
                 {
                     mySqlCommand2.Parameters.Add("@parent", MySqlDbType.Int32).Value = 2;
                 }
-                mySqlCommand2.Parameters.Add("@address", MySqlDbType.VarChar).Value = textBox_Address.Text;
-                mySqlCommand2.Parameters.Add("@phone", MySqlDbType.VarChar).Value = textBox_Phone.Text;
+               
+                
 
 
 

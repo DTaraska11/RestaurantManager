@@ -72,12 +72,128 @@ namespace RestaurantManager
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            MySQLConnection db = new MySQLConnection();
+            db.OpenConn();
+            MySqlCommand command = new MySqlCommand("UPDATE `Restaurant`.`table_info` SET `taken` = @taken,`clean` = @clean WHERE tableID = 2;", db.getConnection());
 
+            MySqlCommand command2 = new MySqlCommand("SELECT taken FROM table_info WHERE tableID = 2", db.getConnection());
+            MySqlDataReader reader = null;
+            int taken = 0;
+            try
+            {
+                reader = command2.ExecuteReader();
+                while (reader.Read())
+                {
+                    taken = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception r)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+            command2 = new MySqlCommand("SELECT clean FROM table_info WHERE tableID = 2", db.getConnection());
+            reader = null;
+            int clean = 0;
+            try
+            {
+                reader = command2.ExecuteReader();
+                while (reader.Read())
+                {
+                    clean = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception r)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+
+
+
+            if (taken == 1)
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 0;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 0;
+            }
+            else if (taken == 0 && clean == 0)
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 0;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 1;
+            }
+            else
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 1;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 0;
+            }
+
+            command.ExecuteNonQuery();
+            db.CloseConn();
+
+            setTableSeating();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            MySQLConnection db = new MySQLConnection();
+            db.OpenConn();
+            MySqlCommand command = new MySqlCommand("UPDATE `Restaurant`.`table_info` SET `taken` = @taken,`clean` = @clean WHERE tableID = 3;", db.getConnection());
 
+            MySqlCommand command2 = new MySqlCommand("SELECT taken FROM table_info WHERE tableID = 3", db.getConnection());
+            MySqlDataReader reader = null;
+            int taken = 0;
+            try
+            {
+                reader = command2.ExecuteReader();
+                while (reader.Read())
+                {
+                    taken = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception r)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+            command2 = new MySqlCommand("SELECT clean FROM table_info WHERE tableID = 3", db.getConnection());
+            reader = null;
+            int clean = 0;
+            try
+            {
+                reader = command2.ExecuteReader();
+                while (reader.Read())
+                {
+                    clean = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            catch (Exception r)
+            {
+                MessageBox.Show("! " + e.ToString());
+            }
+
+
+
+            if (taken == 1)
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 0;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 0;
+            }
+            else if (taken == 0 && clean == 0)
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 0;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 1;
+            }
+            else
+            {
+                command.Parameters.Add("@taken", MySqlDbType.Int16).Value = 1;
+                command.Parameters.Add("@clean", MySqlDbType.Int16).Value = 0;
+            }
+
+            command.ExecuteNonQuery();
+            db.CloseConn();
+
+            setTableSeating();
         }
 
         private void OrderInfoButton_Click(object sender, EventArgs e)

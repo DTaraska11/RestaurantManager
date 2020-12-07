@@ -38,9 +38,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.OrderInfoButton = new System.Windows.Forms.Button();
             this.statButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -49,9 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // StockButton
@@ -59,9 +53,9 @@
             this.StockButton.BackColor = System.Drawing.Color.Transparent;
             this.StockButton.FlatAppearance.BorderSize = 0;
             this.StockButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StockButton.Location = new System.Drawing.Point(1007, 52);
+            this.StockButton.Location = new System.Drawing.Point(876, 49);
             this.StockButton.Name = "StockButton";
-            this.StockButton.Size = new System.Drawing.Size(151, 219);
+            this.StockButton.Size = new System.Drawing.Size(128, 187);
             this.StockButton.TabIndex = 0;
             this.StockButton.UseVisualStyleBackColor = false;
             this.StockButton.Click += new System.EventHandler(this.button1_Click);
@@ -71,9 +65,9 @@
             this.StaffButton.BackColor = System.Drawing.Color.Transparent;
             this.StaffButton.FlatAppearance.BorderSize = 0;
             this.StaffButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.StaffButton.Location = new System.Drawing.Point(429, 248);
+            this.StaffButton.Location = new System.Drawing.Point(373, 210);
             this.StaffButton.Name = "StaffButton";
-            this.StaffButton.Size = new System.Drawing.Size(168, 111);
+            this.StaffButton.Size = new System.Drawing.Size(143, 101);
             this.StaffButton.TabIndex = 1;
             this.StaffButton.UseVisualStyleBackColor = false;
             this.StaffButton.Click += new System.EventHandler(this.StaffButton_Click);
@@ -83,7 +77,7 @@
             this.OrderButton.BackColor = System.Drawing.Color.Transparent;
             this.OrderButton.FlatAppearance.BorderSize = 0;
             this.OrderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderButton.Location = new System.Drawing.Point(1098, 606);
+            this.OrderButton.Location = new System.Drawing.Point(949, 526);
             this.OrderButton.Name = "OrderButton";
             this.OrderButton.Size = new System.Drawing.Size(86, 148);
             this.OrderButton.TabIndex = 2;
@@ -97,7 +91,7 @@
             this.OccupancyButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.OccupancyButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.OccupancyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OccupancyButton.Location = new System.Drawing.Point(1087, 803);
+            this.OccupancyButton.Location = new System.Drawing.Point(939, 687);
             this.OccupancyButton.Name = "OccupancyButton";
             this.OccupancyButton.Size = new System.Drawing.Size(110, 99);
             this.OccupancyButton.TabIndex = 3;
@@ -107,7 +101,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox2.Location = new System.Drawing.Point(768, 649);
+            this.pictureBox2.Location = new System.Drawing.Point(667, 560);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 22);
             this.pictureBox2.TabIndex = 5;
@@ -117,7 +111,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(513, 649);
+            this.pictureBox1.Location = new System.Drawing.Point(444, 560);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 22);
             this.pictureBox1.TabIndex = 6;
@@ -127,7 +121,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox3.Location = new System.Drawing.Point(643, 792);
+            this.pictureBox3.Location = new System.Drawing.Point(557, 687);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(26, 23);
             this.pictureBox3.TabIndex = 7;
@@ -161,41 +155,14 @@
             this.pictureBox6.TabIndex = 10;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox7.Location = new System.Drawing.Point(1507, 734);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox8.Location = new System.Drawing.Point(1507, 327);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox8.TabIndex = 12;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox9.Location = new System.Drawing.Point(1507, 132);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox9.TabIndex = 13;
-            this.pictureBox9.TabStop = false;
-            // 
             // OrderInfoButton
             // 
             this.OrderInfoButton.BackColor = System.Drawing.Color.Transparent;
             this.OrderInfoButton.FlatAppearance.BorderSize = 0;
             this.OrderInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OrderInfoButton.Location = new System.Drawing.Point(716, 0);
+            this.OrderInfoButton.Location = new System.Drawing.Point(619, 1);
             this.OrderInfoButton.Name = "OrderInfoButton";
-            this.OrderInfoButton.Size = new System.Drawing.Size(267, 271);
+            this.OrderInfoButton.Size = new System.Drawing.Size(235, 235);
             this.OrderInfoButton.TabIndex = 14;
             this.OrderInfoButton.UseVisualStyleBackColor = false;
             this.OrderInfoButton.Click += new System.EventHandler(this.OrderInfoButton_Click);
@@ -205,9 +172,9 @@
             this.statButton.BackColor = System.Drawing.Color.Transparent;
             this.statButton.FlatAppearance.BorderSize = 0;
             this.statButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.statButton.Location = new System.Drawing.Point(188, 235);
+            this.statButton.Location = new System.Drawing.Point(168, 210);
             this.statButton.Name = "statButton";
-            this.statButton.Size = new System.Drawing.Size(132, 112);
+            this.statButton.Size = new System.Drawing.Size(110, 91);
             this.statButton.TabIndex = 16;
             this.statButton.UseVisualStyleBackColor = false;
             this.statButton.Click += new System.EventHandler(this.statButton_Click);
@@ -216,13 +183,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RestaurantManager.Properties.Resources.Restaurant_Management_System___2_;
-            this.ClientSize = new System.Drawing.Size(1914, 1061);
+            this.BackgroundImage = global::RestaurantManager.Properties.Resources._2DView;
+            this.ClientSize = new System.Drawing.Size(1585, 885);
             this.Controls.Add(this.statButton);
             this.Controls.Add(this.OrderInfoButton);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -242,9 +206,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,9 +222,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.Button OrderInfoButton;
         private System.Windows.Forms.Button statButton;
     }
