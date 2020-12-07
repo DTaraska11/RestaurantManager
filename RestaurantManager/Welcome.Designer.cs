@@ -76,7 +76,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("MV Boli", 22.125F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(-80, 124);
+            this.label1.Location = new System.Drawing.Point(-80, 118);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(764, 77);
             this.label1.TabIndex = 4;
